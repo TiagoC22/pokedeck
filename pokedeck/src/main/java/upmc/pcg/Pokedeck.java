@@ -21,6 +21,7 @@ public class Pokedeck
 {
   public static void main(String[] args)
   {
+    //Test Tiago
     GameUI game_ui = new GameUI();
     game_ui.start();
   }
