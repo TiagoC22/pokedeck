@@ -15,14 +15,24 @@
 
 package upmc.pcg;
 
+
+
 import upmc.pcg.ui.GameUI;
+import upmc.pcg.ui.Menu;
 
 public class Pokedeck
 {
   public static void main(String[] args)
   {
-    //Test Tiago & Nico
+    Menu menu = new Menu();
+    menu.start();
+    
     GameUI game_ui = new GameUI();
     game_ui.start();
   }
+  
+
 }
+  
+  
+

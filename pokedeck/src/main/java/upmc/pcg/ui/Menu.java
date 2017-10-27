@@ -13,21 +13,34 @@
 // limitations under the License.
 
 package upmc.pcg.ui;
-import java.util.*;
+import java.util.Scanner; //Class scanner
+import upmc.pcg.ajoutCarte; //Class ajoutCarte
+import upmc.pcg.supprCarte; //Class supprCarte
 
 
 public class Menu {
-   public static void main(String[] args)
-  {
-
-  System.out.println("[1] Ajouter une carte");
-  System.out.flush();
-  Scanner console = new Scanner(System.in);
-  int choice1 = console.nextInt();
   
-  System.out.println("[2] Supprimer une carte");
-  System.out.flush();
-  int choice2 = console.nextInt();
-
+   public void start()
+  {
+  
+ 
+    Scanner sc = new Scanner(System.in);
+    System.out.println("[1] Ajouter une carte");
+    System.out.println("[2] Supprimer une carte");
+    int choix = sc.nextInt();
+  
+  switch(choix) {
+    case 1: if (choix == 1) {
+        new ajoutCarte(); break;
+    }
+    
+    case 2: if (choix == 2) {
+        new supprCarte();
+    }
+    
+}
+  
   }   
+   
+   
 }
