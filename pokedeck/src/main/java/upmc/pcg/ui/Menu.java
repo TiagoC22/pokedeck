@@ -13,29 +13,21 @@
 // limitations under the License.
 
 package upmc.pcg.ui;
-
-
-
 import java.util.*;
-import upmc.pcg.game.Game;
+
 
 public class Menu {
-  private final Game game = new Game();
-  private final Scanner console = new Scanner(System.in);
+   public static void main(String[] args)
+  {
 
-  public void start() {
-    print_welcome_msg();
-    ArrayList<String> names = ask_players_names();
-    game.initialize(names);
-    game.play();
-  }
+  System.out.println("[1] Ajouter une carte");
+  System.out.flush();
+  Scanner console = new Scanner(System.in);
+  int choice1 = console.nextInt();
+  
+  System.out.println("[2] Supprimer une carte");
+  System.out.flush();
+  int choice2 = console.nextInt();
 
-  private ArrayList<String> ask_players_names() {
-    return new ArrayList<>();
-  }
-
-  private void print_welcome_msg() {
-    System.out.println("test");
-      
-  }
+  }   
 }
