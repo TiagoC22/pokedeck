@@ -24,7 +24,7 @@ public class Pokedeck
 {
   public static void main(String[] args)
   {
-    Menu menu = new Menu();
+    Menu menu = new Menu(); //Lancement du menu
     menu.start();
     
     GameUI game_ui = new GameUI();

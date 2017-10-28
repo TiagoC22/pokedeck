@@ -30,12 +30,15 @@ public class Menu {
     int choix = sc.nextInt();
   
   switch(choix) {
-    case 1: if (choix == 1) {
-        new ajoutCarte(); break;
+    case 1: if (choix == 1) { //Cas choix 1
+        ajoutCarte ajoutc = new ajoutCarte(); //Lance la classe ajoutCarte
+        ajoutc.texte1(); //Lancement méthode
     }
     
-    case 2: if (choix == 2) {
-        new supprCarte();
+    case 2: if (choix == 2) { //Cas choix 2
+        supprCarte supprc = new supprCarte(); //Lance la classe supprCarte
+        supprc.texte(); //Lancement méthode
+        break;
     }
     
 }
