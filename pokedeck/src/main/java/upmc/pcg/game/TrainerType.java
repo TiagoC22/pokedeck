@@ -3,12 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package upmc.pcg.ui;
+package upmc.pcg.game;
 
 /**
  *
  * @author lepor
  */
-class choice {
+
     
+    public enum TrainerType { //Class du type de la carte
+	Item,
+        Stadium,
+        Supporter
+        
 }
+
