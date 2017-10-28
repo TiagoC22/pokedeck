@@ -29,7 +29,7 @@ public class ajoutCarte {
             pokemon.texte2(); //Lancement méthode
         }
     }
-        System.out.println("Veuillez renseigner les champs suivants :");
+        
         
     }
 }

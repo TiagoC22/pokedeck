@@ -12,7 +12,7 @@ package upmc.pcg;
 public class supprCarte {
     
     public void texte() {
-        System.out.println("test");
+       
         
     }
 }
