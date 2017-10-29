@@ -12,19 +12,29 @@ package upmc.pcg.game;
  */
 public class PokemonCard {
     
-    private String nomPokemon;
-    private String energyPokemon;
+    private String namePokemon;
     private EnergyType energyType;
-    private int hpPokemon;
+    private int hp;
 
-
+    //Constructeur
     public PokemonCard(String namePokemon, int hp, EnergyType energyType) {
-       
-        namePokemon = nomPokemon;
-        hp = hpPokemon;
+        this.namePokemon = namePokemon;
+        this.hp = hp;
+        this.energyType = energyType;
     }
     
-       
+    //Accesseurs
+    public String getCard(){
+        return namePokemon+hp+energyType;
+    }
+    
+    public int getHp() {
+        return hp;
+    }
+    
+    public EnergyType getEnergyType() {
+        return energyType;
+    }
 
 }
   

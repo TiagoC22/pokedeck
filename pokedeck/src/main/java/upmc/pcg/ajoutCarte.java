@@ -14,9 +14,7 @@ import upmc.pcg.game.PokemonCard;
  */
 public class ajoutCarte {
     private EnergyType energyType;
-    private String nomPokemon;
-    private String energyPokemon;
-    private int hpPokemon;
+    
     
     public void texte1() {
     
@@ -25,26 +23,41 @@ public class ajoutCarte {
     System.out.println("[1] Pokemon");
     System.out.println("[2] Trainer");
     System.out.println("[3] Energy");
+    System.out.println("[4] Revenir au menu");
     int choix = t1.nextInt();
   
     
     switch (choix) {
         case 1 : if (choix == 1) {
-             Scanner pok = new Scanner(System.in);
-    System.out.println("Nom : ");
-    System.out.flush();
-    nomPokemon = pok.nextLine();
+            Scanner console1 = new Scanner(System.in);
+            System.out.println("Nom : ");
+            System.out.flush();
+            String nomPokemon = console1.nextLine();
     
-    System.out.println("HP : ");
-    System.out.flush();
-    hpPokemon = pok.nextInt();
-    
-    
+            Scanner console2 = new Scanner(System.in);
+            System.out.println("HP : ");
+            System.out.flush();
+            int hpPokemon = console2.nextInt();
+            
+            Scanner console3 = new Scanner(System.in);
+            System.out.println("Veuillez choisir et écrire l'une des énergies suivantes :");
+            System.out.flush();
+            
+            for(EnergyType energy : EnergyType.values()){
+               System.out.print(energy+" ,");
+            }
+            String nameEnergy = console3.nextLine();
+            
+            
+            
         PokemonCard pokemon = new PokemonCard(nomPokemon, hpPokemon, energyType);
-        System.out.print(pokemon);
-    }
+        System.out.println(pokemon.getCard());
+    
         
         
     }
+    }
+
+    
     }
 }
