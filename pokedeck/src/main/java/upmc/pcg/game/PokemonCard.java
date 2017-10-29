@@ -5,7 +5,6 @@
  */
 package upmc.pcg.game;
 
-import java.util.Scanner;
 
 /**
  *
@@ -13,25 +12,21 @@ import java.util.Scanner;
  */
 public class PokemonCard {
     
-    public void texte2() {
-    Scanner pok = new Scanner(System.in);
-    System.out.println("Nom : ");
-    System.out.flush();
-    String nomPokemon = pok.nextLine();
-    
-    System.out.println("HP : ");
-    System.out.flush();
-    int hpPokemon = pok.nextInt();
-    
-    System.out.println("Sélectionner l'une des énergies suivantes :");
-    System.out.flush();
-    String energyPokemon = pok.nextLine();
-    for(EnergyType energy : EnergyType.values()){
+    private String nomPokemon;
+    private String energyPokemon;
+    private EnergyType energyType;
+    private int hpPokemon;
 
-      System.out.print(energy+" ,");
 
-      
+    public PokemonCard(String namePokemon, int hp, EnergyType energyType) {
+       
+        namePokemon = nomPokemon;
+        hp = hpPokemon;
     }
-        
-    }
+    
+       
+
 }
+  
+ 
+
