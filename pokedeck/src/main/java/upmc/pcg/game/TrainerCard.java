@@ -10,15 +10,14 @@ package upmc.pcg.game;
  */
 public class TrainerCard {
     private final TrainerType trainerType;//Type de la carte (
-    private String nameCard; //Nom de la carte
-    private String description; //Description de la carte
+    private String nameTrainer; //Nom de la carte
+    private String descriptionTrainer; //Description de la carte
    
-   
-	public TrainerCard(TrainerType trainerType) {	
-        
-       
-		this.trainerType = trainerType;
-                System.out.println(trainerType);
+        //Constructeur
+	public TrainerCard(String nameTrainer, String descriptionTrainer, TrainerType trainerType) {	
+            this.trainerType = trainerType;
+            this.nameTrainer = nameTrainer;
+            this.descriptionTrainer = descriptionTrainer;
         }	
 }
 
