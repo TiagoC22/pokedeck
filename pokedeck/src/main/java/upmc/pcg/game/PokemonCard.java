@@ -108,6 +108,7 @@ public class PokemonCard {
         System.out.println(pokemon.getCardPokemon());
         
         
+        
         Scanner console4 = new Scanner(System.in);
         
         System.out.println("Voulez-vous ajouter un nouvelle carte ?");

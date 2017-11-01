@@ -19,7 +19,9 @@ public class Paquet {
 
     HashMap<Integer, String> paquet = new HashMap<>();
    
-   
+    public void put(Integer in, String name) {
+        paquet.put(in,name);
+    }
    
   
    

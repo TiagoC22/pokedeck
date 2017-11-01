@@ -28,7 +28,8 @@ public class Menu {
     Scanner sc = new Scanner(System.in);
     System.out.println("[1] Ajouter une carte");
     System.out.println("[2] Supprimer une carte");
-    System.out.println("[3] Consulter mon paquet");
+    System.out.println("[3] Mettre à jour une carte");
+    System.out.println("[4] Consulter mon paquet");
     int choix = sc.nextInt();
   
   switch(choix) {
@@ -43,10 +44,19 @@ public class Menu {
         break;
     }
     
-    case 3: if (choix == 3) { //Cas choix 2
+    case 3: if (choix == 3) {
+        System.out.println("Fonctionnalité pas encore disponible");
+    }
+      
+    case 4: if (choix == 4) { //Cas choix 2
         Paquet paquetdecarte = new Paquet(); //Lance la classe supprCarte
         paquetdecarte.getPaquet(); //Lancement méthode
         break;
+    }
+    
+    case 5 : if(choix != 1 ||choix  !=2 ||choix !=3 ||choix !=4) {
+        System.out.println("Veuillez saisir une valeur existente :");
+        start();
     }
     
 }
