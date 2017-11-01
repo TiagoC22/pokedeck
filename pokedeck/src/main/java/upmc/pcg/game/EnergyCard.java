@@ -5,6 +5,8 @@
  */
 package upmc.pcg.game;
 
+import java.util.Scanner;
+
 /**
  *
  * @author lepor
@@ -32,5 +34,60 @@ private String nameEnergy; //Nom de la carte
     
     public EnergyType getEnergyType() {
         return energyType;
+    }
+    
+    public static void askEnergyCard() {
+        Scanner console1 = new Scanner(System.in);
+            System.out.println("Nom de l'énergie : ");
+            System.out.flush();
+            String nameEnergy = console1.nextLine();
+            
+            System.out.println("Voici la liste des énergies :");
+            
+            
+            for(EnergyType energy : EnergyType.values()){
+               System.out.print(energy+" ,");
+            }
+            System.out.println(" ");
+            Scanner console3 = new Scanner(System.in);
+            System.out.println("Veuillez choisir une énergie (N'oubliez pas la majuscule):");
+            System.out.flush();
+            String TypeEnergy = console3.nextLine();
+            
+            if (TypeEnergy.equals("Plante")) {
+                energyType = EnergyType.Plante;
+                }
+            else if (TypeEnergy.equals("Electrique"))  {
+                energyType = EnergyType.Electrique;
+            }
+            else if (TypeEnergy.equals("Eau")) {
+                energyType = EnergyType.Eau;
+            }
+            else if (TypeEnergy.equals("Psy")) {
+                energyType = EnergyType.Psy;
+            }
+            else if (TypeEnergy.equals("Feu")) {
+                energyType = EnergyType.Feu;
+            }
+            else if (TypeEnergy.equals("Combat")) {
+                energyType = EnergyType.Combat;
+            }
+            else if (TypeEnergy.equals("Métal")) {
+                energyType = EnergyType.Métal;
+            }
+            else if (TypeEnergy.equals("Obscurité")) {
+                energyType = EnergyType.Obscurité;
+            }
+            else if (TypeEnergy.equals("Fée")) {
+                energyType = EnergyType.Fée;
+            }
+            else if (TypeEnergy.equals("Incolore")) {
+                energyType = EnergyType.Incolore;
+            }
+            else if (TypeEnergy.equals("Dragon")) {
+                energyType = EnergyType.Dragon;
+            }
+        EnergyCard energy = new EnergyCard(nameEnergy,energyType);
+        System.out.println(energy.getCardEnergy());
     }
 }

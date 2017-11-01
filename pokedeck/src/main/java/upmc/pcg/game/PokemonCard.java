@@ -7,6 +7,7 @@ package upmc.pcg.game;
 
 import java.util.HashMap;
 import java.util.Scanner;
+import upmc.pcg.Menu;
 import upmc.pcg.Paquet;
 
 
@@ -16,9 +17,9 @@ import upmc.pcg.Paquet;
  */
 public class PokemonCard {
 
-    
+
     private String namePokemon;
-    private EnergyType energyType;
+    public static EnergyType energyType;
     private int hp;
 
     //Constructeur
@@ -43,6 +44,53 @@ public class PokemonCard {
     
     public EnergyType getEnergyTypePokemon() {
         return energyType;
+    }
+    
+    public static void askPokemonCard() {
+            Scanner console1 = new Scanner(System.in);
+            System.out.println("Nom du pokémon: ");
+            System.out.flush();
+            String namePokemon = console1.nextLine();
+    
+            Scanner console2 = new Scanner(System.in);
+            System.out.println("HP : ");
+            System.out.flush();
+            int hpPokemon = console2.nextInt(); 
+            
+           
+            System.out.println("Voici la liste des énergies :");
+            
+            
+            for(EnergyType energy : EnumEnergy.values()){
+               System.out.print(energy+" ,");
+            }
+            System.out.println(" ");
+            Scanner console3 = new Scanner(System.in);
+            System.out.println("Veuillez choisir et écrire l'une des énergies (N'oubliez pas la majuscule):");
+            System.out.flush();
+            String nameEnergy = console3.nextLine();
+            
+    //Attribution du choix utilisateur (énergie) au type energyType
+           EnergyType.energyCompare(nameEnergy, EnergyType.EnumEnergy.Eau);
+            
+        PokemonCard pokemon = new PokemonCard (namePokemon, hpPokemon, energyType);
+        System.out.println(pokemon.getCardPokemon());
+        
+        
+        Scanner console4 = new Scanner(System.in);
+        System.out.println("Voulez-vous ajouter un nouvelle carte ?");
+        System.out.println("[1] YES / [2] NO");
+        System.out.flush();
+        int yes_no = console3.nextInt();
+        if (yes_no == 1) {
+            Menu menu = new Menu(); //Lancement du menu
+            menu.start();
+        }
+        
+        else {
+        System.exit(0);
+        }
+        
     }
  
   }
