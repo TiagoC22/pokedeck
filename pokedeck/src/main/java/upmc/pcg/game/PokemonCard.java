@@ -13,6 +13,7 @@ import java.util.Scanner;
  * @author lepor
  */
 public class PokemonCard {
+
     
     private String namePokemon;
     private EnergyType energyType;
@@ -26,43 +27,27 @@ public class PokemonCard {
     }
     
     //Accesseurs
-    public String getCard(){
+    public String getCardPokemon(){
         return namePokemon+hp+energyType;
     }
     
-    public int getHp() {
+    public String getNamePokemon() {
+        return namePokemon;
+    }
+     
+    public int getHpPokemon() {
         return hp;
     }
     
-    public EnergyType getEnergyType() {
+    public EnergyType getEnergyTypePokemon() {
         return energyType;
     }
     
-    public static void askPokemonCard() {
-            Scanner console1 = new Scanner(System.in);
-            System.out.println("Nom : ");
-            System.out.flush();
-            String namePokemon = console1.nextLine();
-    
-            Scanner console2 = new Scanner(System.in);
-            System.out.println("HP : ");
-            System.out.flush();
-            int hpPokemon = console2.nextInt(); 
-            
-           
-            System.out.println("Voici la liste des énergies :");
-            
-            
-            for(EnergyType energy : EnergyType.values()){
-               System.out.print(energy+" ,");
-            }
-            System.out.println(" ");
-            Scanner console3 = new Scanner(System.in);
-            System.out.println("Veuillez choisir et écrire l'une des énergies (N'oubliez pas la majuscule):");
-            System.out.flush();
-            String nameEnergy = console3.nextLine();
-    }
-}
+   
+ 
+  }
+
+
   
  
 

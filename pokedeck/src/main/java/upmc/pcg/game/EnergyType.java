@@ -5,6 +5,7 @@
  */
 package upmc.pcg.game;
 
+
 /**
  *
  * @author lepor
@@ -22,9 +23,7 @@ public enum EnergyType { //Type d'energies
         Obscurité,
         Fée,
         Incolore,
-        Dragon
+        Dragon;
+       
 }
-
-
-
-
+     

@@ -14,7 +14,7 @@ package upmc.pcg.game;
     public enum TrainerType { //Class du type de la carte
 	Item,
         Stadium,
-        Supporter
+        Supporter;
         
 }
 

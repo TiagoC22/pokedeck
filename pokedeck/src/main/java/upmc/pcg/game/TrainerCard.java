@@ -13,11 +13,28 @@ public class TrainerCard {
     private String nameTrainer; //Nom de la carte
     private String descriptionTrainer; //Description de la carte
    
-        //Constructeur
-	public TrainerCard(String nameTrainer, String descriptionTrainer, TrainerType trainerType) {	
-            this.trainerType = trainerType;
-            this.nameTrainer = nameTrainer;
-            this.descriptionTrainer = descriptionTrainer;
+    //Constructeur
+    public TrainerCard(String nameTrainer, String descriptionTrainer, TrainerType trainerType) {	
+        this.trainerType = trainerType;
+        this.nameTrainer = nameTrainer;
+        this.descriptionTrainer = descriptionTrainer;
         }	
+        
+    //Accesseurs
+    public String getCardTrainer(){
+        return nameTrainer+descriptionTrainer+trainerType;
+    }
+    
+    public String getNameTrainer() {
+        return nameTrainer;
+    }
+    
+    public String getDescriptionTrainer() {
+        return descriptionTrainer;
+    }
+    
+    public TrainerType getTrainerType() {
+        return trainerType;
+    }
 }
 
