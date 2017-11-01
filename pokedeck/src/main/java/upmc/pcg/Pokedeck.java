@@ -18,7 +18,6 @@ package upmc.pcg;
 
 
 import upmc.pcg.ui.GameUI;
-import upmc.pcg.ui.Menu;
 
 public class Pokedeck
 {

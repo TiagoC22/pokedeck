@@ -6,12 +6,14 @@
  */
 package upmc.pcg;
 
+import java.util.HashMap;
 import java.util.Scanner;
 import upmc.pcg.game.EnergyCard;
 import upmc.pcg.game.EnergyType;
 import upmc.pcg.game.PokemonCard;
 import upmc.pcg.game.TrainerCard;
 import upmc.pcg.game.TrainerType;
+import upmc.pcg.Paquet;
 /**
  *
  * @author lepor
@@ -60,10 +62,10 @@ public class ajoutCarte {
             
     //Attribution du choix utilisateur (énergie) au type energyType
             if (nameEnergy.equals("Plante")) {
-                    energyType = EnergyType.Plante;
+                energyType = EnergyType.Plante;
                 }
             else if (nameEnergy.equals("Electrique"))  {
-                    energyType = EnergyType.Electrique;
+                energyType = EnergyType.Electrique;
             }
             else if (nameEnergy.equals("Eau")) {
                 energyType = EnergyType.Eau;
@@ -93,9 +95,23 @@ public class ajoutCarte {
                 energyType = EnergyType.Dragon;
             }
             
-        PokemonCard pokemon = new PokemonCard(namePokemon, hpPokemon, energyType);
+        PokemonCard pokemon = new PokemonCard (namePokemon, hpPokemon, energyType);
         System.out.println(pokemon.getCardPokemon());
-    
+        
+        
+        Scanner console4 = new Scanner(System.in);
+        System.out.println("Voulez-vous ajouter un nouvelle carte ?");
+        System.out.println("[1] YES / [2] NO");
+        System.out.flush();
+        int yes_no = console3.nextInt();
+        if (yes_no == 1) {
+            Menu menu = new Menu(); //Lancement du menu
+            menu.start();
+        }
+        
+        else {
+        System.exit(0);
+        }
         
     // CAS DU TRAINER ------------------------------------- 
     }
@@ -134,6 +150,7 @@ public class ajoutCarte {
            
         TrainerCard trainer = new TrainerCard(nameTrainer, descriptionTrainer, trainerType);
         System.out.println(trainer.getCardTrainer());
+        
         }
           
     // CAS DE ENERGY -------------------------------------    
@@ -191,6 +208,12 @@ public class ajoutCarte {
         EnergyCard energy = new EnergyCard(nameEnergy,energyType);
         System.out.println(energy.getCardEnergy());
         }
+        
+         case 4 : if (choix == 4 ) {
+            Menu menu = new Menu(); //Lancement du menu
+            menu.start();
+        }
+        
         }
     }
 

@@ -11,9 +11,10 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
+package upmc.pcg;
 
-package upmc.pcg.ui;
 import java.util.Scanner; //Class scanner
+import upmc.pcg.Paquet;
 import upmc.pcg.ajoutCarte; //Class ajoutCarte
 import upmc.pcg.supprCarte; //Class supprCarte
 
@@ -27,6 +28,7 @@ public class Menu {
     Scanner sc = new Scanner(System.in);
     System.out.println("[1] Ajouter une carte");
     System.out.println("[2] Supprimer une carte");
+    System.out.println("[3] Consulter mon paquet");
     int choix = sc.nextInt();
   
   switch(choix) {
@@ -38,6 +40,12 @@ public class Menu {
     case 2: if (choix == 2) { //Cas choix 2
         supprCarte supprc = new supprCarte(); //Lance la classe supprCarte
         supprc.texte(); //Lancement méthode
+        break;
+    }
+    
+    case 3: if (choix == 3) { //Cas choix 2
+        Paquet paquetdecarte = new Paquet(); //Lance la classe supprCarte
+        paquetdecarte.getPaquet(); //Lancement méthode
         break;
     }
     

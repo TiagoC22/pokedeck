@@ -5,7 +5,9 @@
  */
 package upmc.pcg.game;
 
+import java.util.HashMap;
 import java.util.Scanner;
+import upmc.pcg.Paquet;
 
 
 /**
@@ -42,8 +44,6 @@ public class PokemonCard {
     public EnergyType getEnergyTypePokemon() {
         return energyType;
     }
-    
-   
  
   }
 
