@@ -13,7 +13,7 @@ import java.util.Scanner;
  */
 public class EnergyCard {
 
-private EnergyType energyType;
+public static EnergyType energyType;
 private String nameEnergy; //Nom de la carte
 
 
@@ -87,6 +87,7 @@ private String nameEnergy; //Nom de la carte
             else if (TypeEnergy.equals("Dragon")) {
                 energyType = EnergyType.Dragon;
             }
+        //Création de la carte
         EnergyCard energy = new EnergyCard(nameEnergy,energyType);
         System.out.println(energy.getCardEnergy());
     }
