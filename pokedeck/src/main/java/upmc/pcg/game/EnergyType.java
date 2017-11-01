@@ -9,6 +9,8 @@ package upmc.pcg.game;
  *
  * @author lepor
  */
+
+    
 public enum EnergyType { //Type d'energies
         Plante,
         Electrique,
@@ -21,5 +23,8 @@ public enum EnergyType { //Type d'energies
         Fée,
         Incolore,
         Dragon
-        
 }
+
+
+
+

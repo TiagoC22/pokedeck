@@ -5,6 +5,8 @@
  */
 package upmc.pcg.game;
 
+import java.util.Scanner;
+
 
 /**
  *
@@ -35,7 +37,31 @@ public class PokemonCard {
     public EnergyType getEnergyType() {
         return energyType;
     }
-
+    
+    public static void askPokemonCard() {
+            Scanner console1 = new Scanner(System.in);
+            System.out.println("Nom : ");
+            System.out.flush();
+            String namePokemon = console1.nextLine();
+    
+            Scanner console2 = new Scanner(System.in);
+            System.out.println("HP : ");
+            System.out.flush();
+            int hpPokemon = console2.nextInt(); 
+            
+           
+            System.out.println("Voici la liste des énergies :");
+            
+            
+            for(EnergyType energy : EnergyType.values()){
+               System.out.print(energy+" ,");
+            }
+            System.out.println(" ");
+            Scanner console3 = new Scanner(System.in);
+            System.out.println("Veuillez choisir et écrire l'une des énergies (N'oubliez pas la majuscule):");
+            System.out.flush();
+            String nameEnergy = console3.nextLine();
+    }
 }
   
  

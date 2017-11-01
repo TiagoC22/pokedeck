@@ -26,39 +26,23 @@ public class ajoutCarte {
     System.out.println("[3] Energy");
     System.out.println("[4] Revenir au menu");
     int choix = t1.nextInt();
-  
+    
+    /* public void askEnergyType(String nameEnergy) {
+               if (nameEnergy.equals("Plante" || "Feu")) {
+                   return nameEnergy;
+               }
+    } */
     
     switch (choix) {
         case 1 : if (choix == 1) {
-            Scanner console1 = new Scanner(System.in);
-            System.out.println("Nom : ");
-            System.out.flush();
-            String namePokemon = console1.nextLine();
-    
-            Scanner console2 = new Scanner(System.in);
-            System.out.println("HP : ");
-            System.out.flush();
-            int hpPokemon = console2.nextInt(); 
-            
-           
-            System.out.println("Voici la liste des énergies :");
-            
-            
-            for(EnergyType energy : EnergyType.values()){
-               System.out.print(energy+" ,");
-            }
-            System.out.println(" ");
-            Scanner console3 = new Scanner(System.in);
-            System.out.println("Veuillez choisir et écrire l'une des énergies (N'oubliez pas la majuscule):");
-            System.out.flush();
-            String nameEnergy = console3.nextLine();
+           PokemonCard.askPokemonCard();
             
             //Attribution du choix utilisateur (énergie) au type energyType
             if (nameEnergy.equals("Plante")) {
-                    energyType = EnergyType.Plante;
+                energyType = EnergyType.Plante;
                 }
             else if (nameEnergy.equals("Electrique"))  {
-                    energyType = EnergyType.Electrique;
+                energyType = EnergyType.Electrique;
             }
             else if (nameEnergy.equals("Eau")) {
                 energyType = EnergyType.Eau;
@@ -98,4 +82,6 @@ public class ajoutCarte {
 
     
     }
+
+    
 }
