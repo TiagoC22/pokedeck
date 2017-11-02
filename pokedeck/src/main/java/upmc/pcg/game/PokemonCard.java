@@ -6,6 +6,7 @@
 package upmc.pcg.game;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import upmc.pcg.Menu;
 
@@ -17,12 +18,13 @@ import upmc.pcg.Menu;
  */
 public class PokemonCard {
 
+   
+
 
     private String namePokemon;
     public static EnergyType energyType;
     private int hp;
   
-
     //Constructeur
     public PokemonCard(String namePokemon, int hp, EnergyType energyType) {
         this.namePokemon = namePokemon;
@@ -47,22 +49,38 @@ public class PokemonCard {
         return energyType;
     }
    
-    public String toString() {
+    public String msgPokemon() {
         return "Vous avez crée "+namePokemon+" avec "+hp+" de point de vie,"+" et de type "+energyType;
 }
 
-public static ArrayList<PokemonCard> jeu = new ArrayList<PokemonCard>();
-
- public static PokemonCard getCarte() {
+public static List<PokemonCard> jeu = new ArrayList<PokemonCard>();
+public static ArrayList<String> jeu1 = new ArrayList<String>();
+public static ArrayList<Integer> jeu2 = new ArrayList<Integer>();
+public static ArrayList<EnergyType> jeu3 = new ArrayList<EnergyType>();
+public static PokemonCard getCarte() {
     return jeu.get(0);  
 }
    
+ public String getNameCard() {
+     return jeu1.get(0);
+ }
+ 
+ public int getHpCard() {
+     return jeu2.get(0);
+ }
+ 
+ public EnergyType getEnergyCard() {
+     return jeu3.get(0);
+ }
+ 
+ 
     public static void askPokemonCard() {
             Scanner console1 = new Scanner(System.in);
             System.out.println("Nom du pokémon: ");
             System.out.flush();
             String namePokemon = console1.nextLine();
-   
+            
+            
             Scanner console2 = new Scanner(System.in);
             System.out.println("HP : ");
             System.out.flush();
@@ -117,14 +135,16 @@ public static ArrayList<PokemonCard> jeu = new ArrayList<PokemonCard>();
             }
         
         PokemonCard pokemon = new PokemonCard (namePokemon, hpPokemon, energyType);
-        System.out.println(pokemon.toString());
-       
-        jeu.add(pokemon);
-        
+        System.out.println(pokemon.msgPokemon());
+      
+        //jeu.add(pokemon);
+        jeu1.add(namePokemon);
+        jeu2.add(hpPokemon);
+        jeu3.add(energyType);
        
         Scanner console4 = new Scanner(System.in);
        
-        System.out.println("Voulez-vous ajouter un nouvelle carte ?");
+        System.out.println("Voulez-vous ajouter une nouvelle carte ?");
         System.out.println("[1] YES / [2] NO");
         System.out.flush();
         int yes_no = console3.nextInt();

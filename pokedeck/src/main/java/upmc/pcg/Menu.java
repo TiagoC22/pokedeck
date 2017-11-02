@@ -59,7 +59,7 @@ public class Menu {
         System.exit(0);
     }
     
-    case 6 : if(choix != 1 ||choix  !=2 ||choix !=3 ||choix !=4 ||choix !=5) {
+    case 6 : if(choix != 1 ||choix  != 2 ||choix != 3 ||choix != 4 ||choix != 5) {
         System.out.println("Veuillez saisir une valeur existente :");
         start();
     }
