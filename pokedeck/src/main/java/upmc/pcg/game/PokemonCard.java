@@ -75,7 +75,7 @@ public static ArrayList<PokemonCard> jeu = new ArrayList<PokemonCard>();
             for(EnergyType energy : EnergyType.values()){
                System.out.print(energy+" ,");
             }
-            System.out.println(" ");
+            System.out.println("\n");
             Scanner console3 = new Scanner(System.in);
             System.out.println("Veuillez choisir et écrire l'une des énergies (N'oubliez pas la majuscule):");
             System.out.flush();
@@ -115,12 +115,12 @@ public static ArrayList<PokemonCard> jeu = new ArrayList<PokemonCard>();
             else if (nameEnergy.equals("Dragon")) {
                 energyType = EnergyType.Dragon;
             }
-      
+        
         PokemonCard pokemon = new PokemonCard (namePokemon, hpPokemon, energyType);
         System.out.println(pokemon.toString());
        
         jeu.add(pokemon);
-      
+        
        
         Scanner console4 = new Scanner(System.in);
        

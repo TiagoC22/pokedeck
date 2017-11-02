@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package upmc.pcg;
+import upmc.pcg.game.PokemonCard;
 import static upmc.pcg.game.PokemonCard.getCarte;
+import static upmc.pcg.game.PokemonCard.jeu;
 /**
  *
  * @author lepor
@@ -14,7 +16,10 @@ public class Paquet {
 
 
     public static void afficherCarte(){
-        System.out.println("test"+getCarte());
+      
+        System.out.println(getCarte());
+    
     }
+
  
 }
