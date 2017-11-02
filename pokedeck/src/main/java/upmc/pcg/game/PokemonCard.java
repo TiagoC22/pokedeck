@@ -5,6 +5,7 @@
  */
 package upmc.pcg.game;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 import upmc.pcg.Menu;
 
@@ -20,6 +21,7 @@ public class PokemonCard {
     private String namePokemon;
     public static EnergyType energyType;
     private int hp;
+  
 
     //Constructeur
     public PokemonCard(String namePokemon, int hp, EnergyType energyType) {
@@ -27,39 +29,49 @@ public class PokemonCard {
         this.hp = hp;
         this.energyType = energyType;
     }
-    
+   
     //Accesseurs
     public String getCardPokemon(){
         return namePokemon+hp+energyType;
     }
-    
+   
     public String getNamePokemon() {
         return namePokemon;
     }
-     
+    
     public int getHpPokemon() {
         return hp;
     }
-    
+   
     public EnergyType getEnergyTypePokemon() {
         return energyType;
     }
-    
+   
+    public String toString() {
+        return "Vous avez crée "+namePokemon+" avec "+hp+" de point de vie,"+" et de type "+energyType;
+}
+
+public static ArrayList<PokemonCard> jeu = new ArrayList<PokemonCard>();
+
+ public static PokemonCard getCarte() {
+    return jeu.get(0);  
+}
+   
     public static void askPokemonCard() {
             Scanner console1 = new Scanner(System.in);
             System.out.println("Nom du pokémon: ");
             System.out.flush();
             String namePokemon = console1.nextLine();
-    
+   
             Scanner console2 = new Scanner(System.in);
             System.out.println("HP : ");
             System.out.flush();
-            int hpPokemon = console2.nextInt(); 
-            
+            int hpPokemon = console2.nextInt();
            
+          
             System.out.println("Voici la liste des énergies :");
-            
-            
+           
+           
             for(EnergyType energy : EnergyType.values()){
                System.out.print(energy+" ,");
             }
@@ -68,7 +80,7 @@ public class PokemonCard {
             System.out.println("Veuillez choisir et écrire l'une des énergies (N'oubliez pas la majuscule):");
             System.out.flush();
             String nameEnergy = console3.nextLine();
-            
+         
         //Attribution du choix utilisateur (énergie) au type energyType
             if (nameEnergy.equals("Plante")) {
                 energyType = EnergyType.Plante;
@@ -103,19 +115,20 @@ public class PokemonCard {
             else if (nameEnergy.equals("Dragon")) {
                 energyType = EnergyType.Dragon;
             }
-            
+      
         PokemonCard pokemon = new PokemonCard (namePokemon, hpPokemon, energyType);
-        System.out.println(pokemon.getCardPokemon());
-        
-        
-        
+        System.out.println(pokemon.toString());
+       
+        jeu.add(pokemon);
+      
+       
         Scanner console4 = new Scanner(System.in);
-        
+       
         System.out.println("Voulez-vous ajouter un nouvelle carte ?");
         System.out.println("[1] YES / [2] NO");
         System.out.flush();
         int yes_no = console3.nextInt();
-        
+       
         if (yes_no == 1) {
             Menu menu = new Menu(); //Lancement du menu
             menu.start();
@@ -123,11 +136,10 @@ public class PokemonCard {
         else {
         System.exit(0);
         }
-        
+       
     }
  
   }
-
 
   
  

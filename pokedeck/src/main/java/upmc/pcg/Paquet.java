@@ -4,11 +4,7 @@
  * and open the template in the editor.
  */
 package upmc.pcg;
-
-import java.util.HashMap;
-import upmc.pcg.game.EnergyType;
-import upmc.pcg.game.PokemonCard;
-
+import static upmc.pcg.game.PokemonCard.getCarte;
 /**
  *
  * @author lepor
@@ -17,15 +13,8 @@ public class Paquet {
 
 
 
-    HashMap<Integer, String> paquet = new HashMap<>();
-   
-    public void put(Integer in, String name) {
-        paquet.put(in,name);
+    public static void afficherCarte(){
+        System.out.println("test"+getCarte());
     }
-   
-  
-   
-    public void getPaquet() {
-        System.out.println(paquet);
-    }
+ 
 }

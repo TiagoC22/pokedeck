@@ -30,6 +30,7 @@ public class Menu {
     System.out.println("[2] Supprimer une carte");
     System.out.println("[3] Mettre à jour une carte");
     System.out.println("[4] Consulter mon paquet");
+    System.out.println("[5] Quitter");
     int choix = sc.nextInt();
   
   switch(choix) {
@@ -50,15 +51,18 @@ public class Menu {
       
     case 4: if (choix == 4) { //Cas choix 2
         Paquet paquetdecarte = new Paquet(); //Lance la classe supprCarte
-        paquetdecarte.getPaquet(); //Lancement méthode
+        paquetdecarte.afficherCarte();
         break;
     }
     
-    case 5 : if(choix != 1 ||choix  !=2 ||choix !=3 ||choix !=4) {
+    case 5 : if(choix == 5) {
+        System.exit(0);
+    }
+    
+    case 6 : if(choix != 1 ||choix  !=2 ||choix !=3 ||choix !=4 ||choix !=5) {
         System.out.println("Veuillez saisir une valeur existente :");
         start();
     }
-    
 }
   
   }   
