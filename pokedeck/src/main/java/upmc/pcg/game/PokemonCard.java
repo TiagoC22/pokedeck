@@ -47,6 +47,9 @@ public class PokemonCard {
     public EnergyType getEnergyTypePokemon() {
         return energyType;
     }
+   public String toString() {
+       return namePokemon+hp+energyType;
+   }
    
     public String msgPokemon() {
         return "Vous avez crée "+namePokemon+" avec "+hp+" de point de vie,"+" et de type "+energyType;
@@ -119,11 +122,13 @@ public static PokemonCard getCarte() {
             else if (nameEnergy.equals("Dragon")) {
                 energyType = EnergyType.Dragon;
             }
+        jeu.add(new PokemonCard(namePokemon, hpPokemon, energyType)); // Création objet + ajout dans Array
         
         PokemonCard pokemon = new PokemonCard (namePokemon, hpPokemon, energyType);
-        System.out.println(pokemon.msgPokemon());
-      
         jeu.add(pokemon);
+        System.out.println(pokemon.msgPokemon());
+       
+        
        
        
         Scanner console4 = new Scanner(System.in);

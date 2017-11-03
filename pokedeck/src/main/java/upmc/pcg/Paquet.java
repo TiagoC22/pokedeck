@@ -19,22 +19,11 @@ public class Paquet {
 
 
     public static void afficherCarte(){
-        System.out.println(getNameCard()+" | "+getHpCard()+" | "+getEnergyCard());
+        System.out.println(getCarte().toString());
         
     
     }
 
-    private static PokemonCard getNameCard() {
-       return jeu.get(0);
-    }
-    
-    private static PokemonCard getHpCard() {
-       return jeu.get(0);
-    }
-    
-    private static PokemonCard getEnergyCard() {
-       return jeu.get(0);
-    }
 
  
 }
