@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import upmc.pcg.Menu;
+import upmc.pcg.ajoutCarte;
 
 
 
@@ -17,8 +18,6 @@ import upmc.pcg.Menu;
  * @author lepor
  */
 public class PokemonCard {
-
-   
 
 
     private String namePokemon;
@@ -54,24 +53,11 @@ public class PokemonCard {
 }
 
 public static List<PokemonCard> jeu = new ArrayList<PokemonCard>();
-public static ArrayList<String> jeu1 = new ArrayList<String>();
-public static ArrayList<Integer> jeu2 = new ArrayList<Integer>();
-public static ArrayList<EnergyType> jeu3 = new ArrayList<EnergyType>();
+
 public static PokemonCard getCarte() {
     return jeu.get(0);  
 }
-   
- public String getNameCard() {
-     return jeu1.get(0);
- }
- 
- public int getHpCard() {
-     return jeu2.get(0);
- }
- 
- public EnergyType getEnergyCard() {
-     return jeu3.get(0);
- }
+
  
  
     public static void askPokemonCard() {
@@ -137,10 +123,8 @@ public static PokemonCard getCarte() {
         PokemonCard pokemon = new PokemonCard (namePokemon, hpPokemon, energyType);
         System.out.println(pokemon.msgPokemon());
       
-        //jeu.add(pokemon);
-        jeu1.add(namePokemon);
-        jeu2.add(hpPokemon);
-        jeu3.add(energyType);
+        jeu.add(pokemon);
+       
        
         Scanner console4 = new Scanner(System.in);
        
@@ -150,11 +134,12 @@ public static PokemonCard getCarte() {
         int yes_no = console3.nextInt();
        
         if (yes_no == 1) {
-            Menu menu = new Menu(); //Lancement du menu
-            menu.start();
+        ajoutCarte ajoutc = new ajoutCarte(); //Lance la classe ajoutCarte
+        ajoutc.texte1(); //Lancement méthode
         }
         else {
-        System.exit(0);
+        Menu menu = new Menu(); //Lancement du menu
+        menu.start();
         }
        
     }
