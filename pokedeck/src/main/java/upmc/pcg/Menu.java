@@ -34,12 +34,12 @@ public class Menu {
     int choix = sc.nextInt();
   
   switch(choix) {
-    case 1: if (choix == 1) { //Cas choix 1
+    case 1: if (choix == 1) { 
         ajoutCarte ajoutc = new ajoutCarte(); //Lance la classe ajoutCarte
         ajoutc.texte1(); //Lancement méthode
     }
     
-    case 2: if (choix == 2) { //Cas choix 2
+    case 2: if (choix == 2) { 
         supprCarte supprc = new supprCarte(); //Lance la classe supprCarte
         supprc.texte(); //Lancement méthode
         break;
@@ -49,17 +49,18 @@ public class Menu {
         System.out.println("Fonctionnalité pas encore disponible");
     }
       
-    case 4: if (choix == 4) { //Cas choix 2
-        Paquet paquetdecarte = new Paquet(); //Lance la classe supprCarte
+    case 4: if (choix == 4) { 
+        Paquet paquetdecarte = new Paquet(); 
         paquetdecarte.afficherCarte();
         break;
     }
     
     case 5 : if(choix == 5) {
+        System.out.println("Vous allez quitter le programme...");
         System.exit(0);
     }
     
-    case 6 : if(choix != 1 ||choix  != 2 ||choix != 3 ||choix != 4 ||choix != 5) {
+    case 6 : if(choix != 1 && choix  != 2 && choix != 3 && choix != 4 && choix != 5) {
         System.out.println("Veuillez saisir une valeur existente :");
         start();
     }

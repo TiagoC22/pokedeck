@@ -5,8 +5,10 @@
  */
 package upmc.pcg.game;
 
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 import upmc.pcg.Menu;
 import upmc.pcg.ajoutCarte;
@@ -58,9 +60,21 @@ public class PokemonCard {
 public static List<PokemonCard> jeu = new ArrayList<PokemonCard>();
 
 public static PokemonCard getCarte() {
-    return jeu.get(0);  
+    for (int x=0; x<jeu.size(); x++) {
+       return jeu.get(x);
+    }
+        return null;
+     
 }
+private int stId;
 
+
+public boolean setIdNum(int id)
+    {
+        this.stId = id;
+        id++;
+        return true;
+    }
  
  
     public static void askPokemonCard() {
@@ -74,6 +88,7 @@ public static PokemonCard getCarte() {
             System.out.println("HP : ");
             System.out.flush();
             int hpPokemon = console2.nextInt();
+            
            
           
             System.out.println("Voici la liste des énergies :");
@@ -122,11 +137,17 @@ public static PokemonCard getCarte() {
             else if (nameEnergy.equals("Dragon")) {
                 energyType = EnergyType.Dragon;
             }
+        
         jeu.add(new PokemonCard(namePokemon, hpPokemon, energyType)); // Création objet + ajout dans Array
+        for (int i=0; i<999; i++) {
         
         PokemonCard pokemon = new PokemonCard (namePokemon, hpPokemon, energyType);
+        
+        pokemon.setIdNum(i); 
         jeu.add(pokemon);
-        System.out.println(pokemon.msgPokemon());
+        }
+        
+        
        
         
        

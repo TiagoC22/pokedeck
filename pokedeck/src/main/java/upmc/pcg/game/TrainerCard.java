@@ -6,6 +6,8 @@
 package upmc.pcg.game;
 
 import java.util.Scanner;
+import upmc.pcg.Menu;
+import upmc.pcg.ajoutCarte;
 
 /**
  *
@@ -75,6 +77,22 @@ public class TrainerCard {
            
         TrainerCard trainer = new TrainerCard(nameTrainer, descriptionTrainer, trainerType);
         System.out.println(trainer.getCardTrainer());
+        
+        Scanner console4 = new Scanner(System.in);
+       
+        System.out.println("Voulez-vous ajouter une nouvelle carte ?");
+        System.out.println("[1] YES / [2] NO");
+        System.out.flush();
+        int yes_no = console3.nextInt();
+       
+        if (yes_no == 1) {
+        ajoutCarte ajoutc = new ajoutCarte(); //Lance la classe ajoutCarte
+        ajoutc.texte1(); //Lancement méthode
+        }
+        else {
+        Menu menu = new Menu(); //Lancement du menu
+        menu.start();
+        }
     }
     
 }
