@@ -9,9 +9,9 @@ package upmc.pcg;
  *
  * @author lepor
  */
-public class supprCarte {
+public class delCard {
     
-    public void texte() {
+    public void askDelCard() {
        
         
     }

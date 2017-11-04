@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import upmc.pcg.game.EnergyType;
 import upmc.pcg.game.PokemonCard;
-import static upmc.pcg.game.PokemonCard.getCarte;
+import static upmc.pcg.game.PokemonCard.getCard;
 import static upmc.pcg.game.PokemonCard.jeu;
 
 
@@ -16,13 +16,13 @@ import static upmc.pcg.game.PokemonCard.jeu;
  *
  * @author lepor
  */
-public class Paquet {
+public class Deck {
 
 
 
-    public static void afficherCarte(){
+    public static void displayCard(){
         
-        System.out.println(getCarte().toString());
+        System.out.println(getCard().toString());
     }
     
 

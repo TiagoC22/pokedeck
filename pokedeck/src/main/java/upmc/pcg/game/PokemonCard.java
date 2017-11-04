@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 import upmc.pcg.Menu;
-import upmc.pcg.ajoutCarte;
+import upmc.pcg.addCard;
 
 
 
@@ -26,14 +26,14 @@ public class PokemonCard {
     public static EnergyType energyType;
     private int hp;
   
-    //Constructeur
+    //Constructor
     public PokemonCard(String namePokemon, int hp, EnergyType energyType) {
         this.namePokemon = namePokemon;
         this.hp = hp;
         this.energyType = energyType;
     }
    
-    //Accesseurs
+    //Accessors
     public String getCardPokemon(){
         return namePokemon+hp+energyType;
     }
@@ -54,32 +54,23 @@ public class PokemonCard {
    }
    
     public String msgPokemon() {
-        return "Vous avez crée "+namePokemon+" avec "+hp+" de point de vie,"+" et de type "+energyType;
+        return "You have create "+namePokemon+" with "+hp+" life points,"+" and with the energy "+energyType;
 }
 
-public static List<PokemonCard> jeu = new ArrayList<PokemonCard>();
+public static List<PokemonCard> jeu = new ArrayList<PokemonCard>(); //declaration of the array
 
-public static PokemonCard getCarte() {
+public static PokemonCard getCard() {
     for (int x=0; x<jeu.size(); x++) {
        return jeu.get(x);
     }
         return null;
      
 }
-private int stId;
 
-
-public boolean setIdNum(int id)
-    {
-        this.stId = id;
-        id++;
-        return true;
-    }
- 
  
     public static void askPokemonCard() {
             Scanner console1 = new Scanner(System.in);
-            System.out.println("Nom du pokémon: ");
+            System.out.println("Name of Pokemon: ");
             System.out.flush();
             String namePokemon = console1.nextLine();
             
@@ -91,7 +82,7 @@ public boolean setIdNum(int id)
             
            
           
-            System.out.println("Voici la liste des énergies :");
+            System.out.println("Here is the list of energy's :");
            
            
             for(EnergyType energy : EnergyType.values()){
@@ -99,37 +90,37 @@ public boolean setIdNum(int id)
             }
             System.out.println("\n");
             Scanner console3 = new Scanner(System.in);
-            System.out.println("Veuillez choisir et écrire l'une des énergies (N'oubliez pas la majuscule):");
+            System.out.println("Please choose an energy (Don't forget the capital letter) :");
             System.out.flush();
             String nameEnergy = console3.nextLine();
          
-        //Attribution du choix utilisateur (énergie) au type energyType
-            if (nameEnergy.equals("Plante")) {
-                energyType = EnergyType.Plante;
+            //compare user choice with energy type
+            if (nameEnergy.equals("Grass")) {
+                energyType = EnergyType.Grass;
                 }
-            else if (nameEnergy.equals("Electrique"))  {
-                energyType = EnergyType.Electrique;
+            else if (nameEnergy.equals("Lightning"))  {
+                energyType = EnergyType.Lightning;
             }
-            else if (nameEnergy.equals("Eau")) {
-                energyType = EnergyType.Eau;
+            else if (nameEnergy.equals("Water")) {
+                energyType = EnergyType.Water;
             }
             else if (nameEnergy.equals("Psy")) {
                 energyType = EnergyType.Psy;
             }
-            else if (nameEnergy.equals("Feu")) {
-                energyType = EnergyType.Feu;
+            else if (nameEnergy.equals("Fire")) {
+                energyType = EnergyType.Fire;
             }
-            else if (nameEnergy.equals("Combat")) {
-                energyType = EnergyType.Combat;
+            else if (nameEnergy.equals("Fighting")) {
+                energyType = EnergyType.Fighting;
             }
-            else if (nameEnergy.equals("Métal")) {
-                energyType = EnergyType.Métal;
+            else if (nameEnergy.equals("Metal")) {
+                energyType = EnergyType.Metal;
             }
-            else if (nameEnergy.equals("Obscurité")) {
-                energyType = EnergyType.Obscurité;
+            else if (nameEnergy.equals("Darkness")) {
+                energyType = EnergyType.Darkness;
             }
-            else if (nameEnergy.equals("Fée")) {
-                energyType = EnergyType.Fée;
+            else if (nameEnergy.equals("Fairy")) {
+                energyType = EnergyType.Fairy;
             }
             else if (nameEnergy.equals("Incolore")) {
                 energyType = EnergyType.Incolore;
@@ -138,33 +129,24 @@ public boolean setIdNum(int id)
                 energyType = EnergyType.Dragon;
             }
         
-        jeu.add(new PokemonCard(namePokemon, hpPokemon, energyType)); // Création objet + ajout dans Array
-        for (int i=0; i<999; i++) {
-        
+        jeu.add(new PokemonCard(namePokemon, hpPokemon, energyType)); //add pokemon object in the array
         PokemonCard pokemon = new PokemonCard (namePokemon, hpPokemon, energyType);
-        
-        pokemon.setIdNum(i); 
         jeu.add(pokemon);
-        }
         
         
-       
-        
-       
-       
         Scanner console4 = new Scanner(System.in);
        
-        System.out.println("Voulez-vous ajouter une nouvelle carte ?");
+        System.out.println("Do you want to add a new card ?");
         System.out.println("[1] YES / [2] NO");
         System.out.flush();
-        int yes_no = console3.nextInt();
+        int yes_no = console4.nextInt();
        
         if (yes_no == 1) {
-        ajoutCarte ajoutc = new ajoutCarte(); //Lance la classe ajoutCarte
-        ajoutc.texte1(); //Lancement méthode
+        addCard ajoutc = new addCard(); //run addCard class
+        ajoutc.askAddCard(); //run method
         }
         else {
-        Menu menu = new Menu(); //Lancement du menu
+        Menu menu = new Menu(); //run menu
         menu.start();
         }
        

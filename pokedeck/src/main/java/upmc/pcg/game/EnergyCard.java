@@ -7,7 +7,7 @@ package upmc.pcg.game;
 
 import java.util.Scanner;
 import upmc.pcg.Menu;
-import upmc.pcg.ajoutCarte;
+import upmc.pcg.addCard;
 
 /**
  *
@@ -16,16 +16,16 @@ import upmc.pcg.ajoutCarte;
 public class EnergyCard {
 
 public static EnergyType energyType;
-private String nameEnergy; //Nom de la carte
+private String nameEnergy; //name of the card
 
 
-    //Constructeur
+    //Constructor
     public EnergyCard(String nameEnergy, EnergyType energyType) {	
         this.energyType = energyType;
         this.nameEnergy = nameEnergy;
     }	
         
-    //Accesseurs
+    //Accessors
     public String getCardEnergy(){
         return nameEnergy+energyType;
     }
@@ -39,49 +39,49 @@ private String nameEnergy; //Nom de la carte
     }
     
     public static void askEnergyCard() {
-        Scanner console1 = new Scanner(System.in);
-            System.out.println("Nom de l'énergie : ");
+            Scanner console1 = new Scanner(System.in);
+            System.out.println("Name of energy : ");
             System.out.flush();
             String nameEnergy = console1.nextLine();
             
-            System.out.println("Voici la liste des énergies :");
+            System.out.println("Here is the list of energy's :");
             
             
             for(EnergyType energy : EnergyType.values()){
                System.out.print(energy+" ,");
             }
             System.out.println(" ");
-            Scanner console3 = new Scanner(System.in);
-            System.out.println("Veuillez choisir une énergie (N'oubliez pas la majuscule):");
+            Scanner console2 = new Scanner(System.in);
+            System.out.println("Please choose an energy (Don't forget the capital letter :");
             System.out.flush();
-            String TypeEnergy = console3.nextLine();
+            String TypeEnergy = console2.nextLine();
             
-            if (TypeEnergy.equals("Plante")) {
-                energyType = EnergyType.Plante;
+            if (TypeEnergy.equals("Grass")) {
+                energyType = EnergyType.Grass;
                 }
-            else if (TypeEnergy.equals("Electrique"))  {
-                energyType = EnergyType.Electrique;
+            else if (TypeEnergy.equals("Lightning"))  {
+                energyType = EnergyType.Lightning;
             }
-            else if (TypeEnergy.equals("Eau")) {
-                energyType = EnergyType.Eau;
+            else if (TypeEnergy.equals("Water")) {
+                energyType = EnergyType.Water;
             }
             else if (TypeEnergy.equals("Psy")) {
                 energyType = EnergyType.Psy;
             }
-            else if (TypeEnergy.equals("Feu")) {
-                energyType = EnergyType.Feu;
+            else if (TypeEnergy.equals("Fire")) {
+                energyType = EnergyType.Fire;
             }
-            else if (TypeEnergy.equals("Combat")) {
-                energyType = EnergyType.Combat;
+            else if (TypeEnergy.equals("Fighting")) {
+                energyType = EnergyType.Fighting;
             }
-            else if (TypeEnergy.equals("Métal")) {
-                energyType = EnergyType.Métal;
+            else if (TypeEnergy.equals("Metal")) {
+                energyType = EnergyType.Metal;
             }
-            else if (TypeEnergy.equals("Obscurité")) {
-                energyType = EnergyType.Obscurité;
+            else if (TypeEnergy.equals("Darkness")) {
+                energyType = EnergyType.Darkness;
             }
-            else if (TypeEnergy.equals("Fée")) {
-                energyType = EnergyType.Fée;
+            else if (TypeEnergy.equals("Fairy")) {
+                energyType = EnergyType.Fairy;
             }
             else if (TypeEnergy.equals("Incolore")) {
                 energyType = EnergyType.Incolore;
@@ -89,23 +89,23 @@ private String nameEnergy; //Nom de la carte
             else if (TypeEnergy.equals("Dragon")) {
                 energyType = EnergyType.Dragon;
             }
-        //Création de la carte
+        //Create the card
         EnergyCard energy = new EnergyCard(nameEnergy,energyType);
         System.out.println(energy.getCardEnergy());
         
-        Scanner console4 = new Scanner(System.in);
+        Scanner console3 = new Scanner(System.in);
        
-        System.out.println("Voulez-vous ajouter une nouvelle carte ?");
+        System.out.println("Do you want to add a new card ?");
         System.out.println("[1] YES / [2] NO");
         System.out.flush();
         int yes_no = console3.nextInt();
        
         if (yes_no == 1) {
-        ajoutCarte ajoutc = new ajoutCarte(); //Lance la classe ajoutCarte
-        ajoutc.texte1(); //Lancement méthode
+        addCard ajoutc = new addCard(); //run addCard class
+        ajoutc.askAddCard(); //run method askAddCard
         }
         else {
-        Menu menu = new Menu(); //Lancement du menu
+        Menu menu = new Menu(); //run menu
         menu.start();
         }
     }

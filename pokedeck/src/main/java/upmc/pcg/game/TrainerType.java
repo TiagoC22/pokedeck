@@ -11,7 +11,7 @@ package upmc.pcg.game;
  */
 
     
-    public enum TrainerType { //Class du type de la carte
+    public enum TrainerType { //type of trainer's
 	Item,
         Stadium,
         Supporter;

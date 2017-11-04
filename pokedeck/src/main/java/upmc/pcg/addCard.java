@@ -18,36 +18,36 @@ import upmc.pcg.game.TrainerType;
  *
  * @author lepor
  */
-public class ajoutCarte {
+public class addCard {
     private EnergyType energyType;
     private TrainerType trainerType;
     
     
-    public void texte1() {
+    public void askAddCard() {
     
     Scanner t1 = new Scanner(System.in);
-    System.out.println("Quel type de carte voulez-vous ajouté ?");
+    System.out.println("What kind of card do you want added ?");
     System.out.println("[1] Pokemon");
     System.out.println("[2] Trainer");
     System.out.println("[3] Energy");
-    System.out.println("[4] Revenir au menu");
-    int choix = t1.nextInt();
+    System.out.println("[4] Back to the menu");
+    int choice = t1.nextInt();
   
     
-    switch (choix) {
+    switch (choice) {
         
-        case 1 : if (choix == 1) {
-            PokemonCard.askPokemonCard(); //Appel de la méthode choix utilisateur PokemonCard
+        case 1 : if (choice == 1) {
+            PokemonCard.askPokemonCard(); //call method askPokemonCard for user create card Pokemon
         }
-        case 2 : if (choix == 2) {
+        case 2 : if (choice == 2) {
             TrainerCard.askTrainerCard();
         }
-        case 3 : if (choix == 3)  {
+        case 3 : if (choice == 3)  {
             EnergyCard.askEnergyCard();
         }
         
-        case 4 : if (choix == 4 ) {
-            Menu menu = new Menu(); //Lancement du menu
+        case 4 : if (choice == 4 ) {
+            Menu menu = new Menu(); //run the menu
             menu.start();
         }
     }

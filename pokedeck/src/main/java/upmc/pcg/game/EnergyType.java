@@ -12,16 +12,16 @@ package upmc.pcg.game;
  */
 
     
-public enum EnergyType { //Type d'energies
-        Plante,
-        Electrique,
-        Eau,
+public enum EnergyType { //type of energy's
+        Grass,
+        Lightning,
+        Water,
         Psy,
-        Feu,
-        Combat,
-        Métal,
-        Obscurité,
-        Fée,
+        Fire,
+        Fighting,
+        Metal,
+        Darkness,
+        Fairy,
         Incolore,
         Dragon;
        

@@ -7,25 +7,25 @@ package upmc.pcg.game;
 
 import java.util.Scanner;
 import upmc.pcg.Menu;
-import upmc.pcg.ajoutCarte;
+import upmc.pcg.addCard;
 
 /**
  *
  * @author lepor
  */
 public class TrainerCard {
-    public static TrainerType trainerType;//Type de la carte (
-    private String nameTrainer; //Nom de la carte
-    private String descriptionTrainer; //Description de la carte
+    public static TrainerType trainerType;//type of card
+    private String nameTrainer; //name of card
+    private String descriptionTrainer; //description of card
    
-    //Constructeur
+    //Constructor
     public TrainerCard(String nameTrainer, String descriptionTrainer, TrainerType trainerType) {	
         this.trainerType = trainerType;
         this.nameTrainer = nameTrainer;
         this.descriptionTrainer = descriptionTrainer;
         }	
         
-    //Accesseurs
+    //Accessors
     public String getCardTrainer(){
         return nameTrainer+descriptionTrainer+trainerType;
     }
@@ -44,7 +44,7 @@ public class TrainerCard {
     
     public static void askTrainerCard() {
         Scanner console1 = new Scanner(System.in);
-            System.out.println("Nom du trainer: ");
+            System.out.println("Name of trainer: ");
             System.out.flush();
             String nameTrainer = console1.nextLine();
             
@@ -53,7 +53,7 @@ public class TrainerCard {
             System.out.flush();
             String descriptionTrainer = console2.nextLine(); 
             
-            System.out.println("Voici la liste des trainers :");
+            System.out.println("Here is the list of trainer's  :");
             
             
             for(TrainerType trainer : TrainerType.values()){
@@ -61,7 +61,7 @@ public class TrainerCard {
             }
             System.out.println(" ");
             Scanner console3 = new Scanner(System.in);
-            System.out.println("Veuillez choisir un Trainer (N'oubliez pas la majuscule):");
+            System.out.println("Please choose a trainer (Don't forget the capital letter) :");
             System.out.flush();
             String TypeTrainer = console3.nextLine();
             
@@ -80,17 +80,17 @@ public class TrainerCard {
         
         Scanner console4 = new Scanner(System.in);
        
-        System.out.println("Voulez-vous ajouter une nouvelle carte ?");
+        System.out.println("Do you want to add a new card ?");
         System.out.println("[1] YES / [2] NO");
         System.out.flush();
-        int yes_no = console3.nextInt();
+        int yes_no = console4.nextInt();
        
         if (yes_no == 1) {
-        ajoutCarte ajoutc = new ajoutCarte(); //Lance la classe ajoutCarte
-        ajoutc.texte1(); //Lancement méthode
+        addCard ajoutc = new addCard(); //run addCard class
+        ajoutc.askAddCard(); //run method askAddCard
         }
         else {
-        Menu menu = new Menu(); //Lancement du menu
+        Menu menu = new Menu(); //run menu
         menu.start();
         }
     }

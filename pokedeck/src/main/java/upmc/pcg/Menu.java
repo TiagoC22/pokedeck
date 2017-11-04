@@ -14,9 +14,7 @@
 package upmc.pcg;
 
 import java.util.Scanner; //Class scanner
-import upmc.pcg.Paquet;
-import upmc.pcg.ajoutCarte; //Class ajoutCarte
-import upmc.pcg.supprCarte; //Class supprCarte
+
 
 
 public class Menu {
@@ -28,40 +26,40 @@ public class Menu {
     Scanner sc = new Scanner(System.in);
     System.out.println("[1] Add a card");
     System.out.println("[2] Delete a card");
-    System.out.println("[3] Mettre à jour une carte");
-    System.out.println("[4] Consulter mon paquet");
-    System.out.println("[5] Quitter");
-    int choix = sc.nextInt();
+    System.out.println("[3] Update a card");
+    System.out.println("[4] View my deck");
+    System.out.println("[5] Exit");
+    int choice = sc.nextInt();
   
-  switch(choix) {
-    case 1: if (choix == 1) { 
-        ajoutCarte ajoutc = new ajoutCarte(); //Lance la classe ajoutCarte
-        ajoutc.texte1(); //Lancement méthode
+  switch(choice) {
+    case 1: if (choice == 1) { 
+        addCard ajoutc = new addCard(); //run addCard class
+        ajoutc.askAddCard(); //run method askAddCard
     }
     
-    case 2: if (choix == 2) { 
-        supprCarte supprc = new supprCarte(); //Lance la classe supprCarte
-        supprc.texte(); //Lancement méthode
+    case 2: if (choice == 2) { 
+        delCard supprc = new delCard(); //run delCard class
+        supprc.askDelCard(); //run method askDelCard
         break;
     }
     
-    case 3: if (choix == 3) {
-        System.out.println("Fonctionnalité pas encore disponible");
+    case 3: if (choice == 3) {
+        System.out.println("Functionality not yet available");
     }
       
-    case 4: if (choix == 4) { 
-        Paquet paquetdecarte = new Paquet(); 
-        paquetdecarte.afficherCarte();
+    case 4: if (choice == 4) { 
+        Deck paquetdecarte = new Deck(); 
+        paquetdecarte.displayCard();
         break;
     }
     
-    case 5 : if(choix == 5) {
-        System.out.println("Vous allez quitter le programme...");
+    case 5 : if(choice == 5) {
+        System.out.println("You will leave the program...");
         System.exit(0);
     }
     
-    case 6 : if(choix != 1 && choix  != 2 && choix != 3 && choix != 4 && choix != 5) {
-        System.out.println("Veuillez saisir une valeur existente :");
+    case 6 : if(choice != 1 && choice  != 2 && choice != 3 && choice != 4 && choice != 5) {
+        System.out.println("Please enter an existing value :");
         start();
     }
 }
