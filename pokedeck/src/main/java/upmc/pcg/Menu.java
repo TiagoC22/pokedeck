@@ -26,8 +26,8 @@ public class Menu {
   
  
     Scanner sc = new Scanner(System.in);
-    System.out.println("[1] Ajouter une carte");
-    System.out.println("[2] Supprimer une carte");
+    System.out.println("[1] Add a card");
+    System.out.println("[2] Delete a card");
     System.out.println("[3] Mettre à jour une carte");
     System.out.println("[4] Consulter mon paquet");
     System.out.println("[5] Quitter");
