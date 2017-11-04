@@ -45,13 +45,13 @@ public class TrainerCard {
     }
     public String toString() {
        return nameTrainer+" "+descriptionTrainer+" "+trainerType;
-   }
+    }
    
     public String msgTrainer() {
         return "You have create "+nameTrainer+" with the following description : "+descriptionTrainer+" and the type "+trainerType;
-}
+    }
     
-    public static List<TrainerCard> jeu = new ArrayList<TrainerCard>(); //declaration of the array
+public static List<TrainerCard> jeu = new ArrayList<TrainerCard>(); //declaration of the array
 
     public static TrainerCard getArrayTrainer() {
     for (int x=0; x<jeu.size(); x++) {
@@ -63,7 +63,8 @@ public class TrainerCard {
 
     
     public static void askTrainerCard() {
-        Scanner console1 = new Scanner(System.in);
+           
+            Scanner console1 = new Scanner(System.in);
             System.out.println("Name of trainer: ");
             System.out.flush();
             String nameTrainer = console1.nextLine();
@@ -87,7 +88,7 @@ public class TrainerCard {
             
             if (TypeTrainer.equals("Item")) {
                 trainerType = TrainerType.Item;
-                }
+            }
             else if (TypeTrainer.equals("Stadium"))  {
                 trainerType = TrainerType.Stadium;
             }
@@ -109,12 +110,12 @@ public class TrainerCard {
         int yes_no = console4.nextInt();
        
         if (yes_no == 1) {
-        addCard ajoutc = new addCard(); //run addCard class
-        ajoutc.askAddCard(); //run method askAddCard
+            addCard ajoutc = new addCard(); //run addCard class
+            ajoutc.askAddCard(); //run method askAddCard
         }
         else {
-        Menu menu = new Menu(); //run menu
-        menu.start();
+            Menu menu = new Menu(); //run menu
+            menu.start();
         }
     }
     

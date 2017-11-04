@@ -23,7 +23,7 @@ public class addCard {
     private TrainerType trainerType;
     
     
-    public void askAddCard() {
+public void askAddCard() {
     
     Scanner t1 = new Scanner(System.in);
     System.out.println("What kind of card do you want added ?");

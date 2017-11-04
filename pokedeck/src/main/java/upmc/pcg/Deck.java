@@ -20,27 +20,27 @@ public class Deck {
 
     public static void displayCard(){
         
-            Scanner console1 = new Scanner(System.in);
-            System.out.println("Which card deck do you want to watch : ");
-            System.out.println("[1] Pokemon deck");
-            System.out.println("[2] Trainer deck");
-            System.out.println("[3] Energy deck");
-            System.out.flush();
-            int choicedeck = console1.nextInt();
+        Scanner console1 = new Scanner(System.in);
+        System.out.println("Which card deck do you want to watch : ");
+        System.out.println("[1] Pokemon deck");
+        System.out.println("[2] Trainer deck");
+        System.out.println("[3] Energy deck");
+        System.out.flush();
+        int choicedeck = console1.nextInt();
         
-            switch(choicedeck) {
-                case 1 : if (choicedeck == 1) {
-                    System.out.println(getArrayPokemon().toString());
-                }
-                
-                case 2 : if (choicedeck == 2 ) {
-                    System.out.println(getArrayTrainer().toString());
-                }
-                
-                case 3 : if (choicedeck == 3 ) {
-                    System.out.println(getArrayEnergy().toString());
-                }
+        switch(choicedeck) {
+            case 1 : if (choicedeck == 1) {
+                System.out.println(getArrayPokemon().toString());
             }
+                
+            case 2 : if (choicedeck == 2 ) {
+                System.out.println(getArrayTrainer().toString());
+            }
+                
+            case 3 : if (choicedeck == 3 ) {
+                System.out.println(getArrayEnergy().toString());
+            }
+        }
         
     }
     

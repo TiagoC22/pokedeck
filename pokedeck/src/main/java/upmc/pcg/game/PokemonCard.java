@@ -5,10 +5,9 @@
  */
 package upmc.pcg.game;
 
-import java.nio.charset.Charset;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.Scanner;
 import upmc.pcg.Menu;
 import upmc.pcg.addCard;
@@ -49,19 +48,20 @@ public class PokemonCard {
     public EnergyType getEnergyTypePokemon() {
         return energyType;
     }
-   public String toString() {
+    
+    public String toString() {
        return namePokemon+" "+hp+" "+energyType;
-   }
+    }
    
     public String msgPokemon() {
         return "You have create "+namePokemon+" with "+hp+" life points,"+" and with the energy "+energyType;
-}
+    }
 
 public static List<PokemonCard> jeu = new ArrayList<PokemonCard>(); //declaration of the array
 
 public static PokemonCard getArrayPokemon() {
     for (int x=0; x<jeu.size(); x++) {
-       return jeu.get(x);
+        return jeu.get(x);
     }
         return null;
      
@@ -97,7 +97,7 @@ public static PokemonCard getArrayPokemon() {
             //compare user choice with energy type
             if (nameEnergy.equals("Grass")) {
                 energyType = EnergyType.Grass;
-                }
+            }
             else if (nameEnergy.equals("Lightning"))  {
                 energyType = EnergyType.Lightning;
             }
@@ -143,12 +143,12 @@ public static PokemonCard getArrayPokemon() {
         int yes_no = console4.nextInt();
        
         if (yes_no == 1) {
-        addCard ajoutc = new addCard(); //run addCard class
-        ajoutc.askAddCard(); //run method
+            addCard ajoutc = new addCard(); //run addCard class
+            ajoutc.askAddCard(); //run method
         }
         else {
-        Menu menu = new Menu(); //run menu
-        menu.start();
+            Menu menu = new Menu(); //run menu
+            menu.start();
         }
        
     }

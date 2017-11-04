@@ -31,39 +31,39 @@ public class Menu {
     System.out.println("[5] Exit");
     int choice = sc.nextInt();
   
-  switch(choice) {
-    case 1: if (choice == 1) { 
-        addCard ajoutc = new addCard(); //run addCard class
-        ajoutc.askAddCard(); //run method askAddCard
-    }
+    switch(choice) {
+        case 1: if (choice == 1) { 
+            addCard ajoutc = new addCard(); //run addCard class
+            ajoutc.askAddCard(); //run method askAddCard
+        }
     
-    case 2: if (choice == 2) { 
-        delCard supprc = new delCard(); //run delCard class
-        supprc.askDelCard(); //run method askDelCard
-        break;
-    }
+        case 2: if (choice == 2) { 
+            delCard supprc = new delCard(); //run delCard class
+            supprc.askDelCard(); //run method askDelCard
+            break;
+        }
     
-    case 3: if (choice == 3) {
-        System.out.println("Functionality not yet available");
-    }
+        case 3: if (choice == 3) {
+            System.out.println("Functionality not yet available");
+        }
       
-    case 4: if (choice == 4) { 
-        Deck paquetdecarte = new Deck(); 
-        paquetdecarte.displayCard();
-        break;
-    }
+        case 4: if (choice == 4) { 
+            Deck paquetdecarte = new Deck(); 
+            paquetdecarte.displayCard();
+            break;
+        }
     
-    case 5 : if(choice == 5) {
-        System.out.println("You will leave the program...");
-        System.exit(0);
-    }
+        case 5 : if(choice == 5) {
+            System.out.println("You will leave the program...");
+            System.exit(0);
+        }
     
-    case 6 : if(choice != 1 && choice  != 2 && choice != 3 && choice != 4 && choice != 5) {
-        System.out.println("Please enter an existing value :");
-        start();
+        case 6 : if(choice != 1 && choice  != 2 && choice != 3 && choice != 4 && choice != 5) {
+            System.out.println("Please enter an existing value :");
+            start();
+        }
     }
-}
-  
+
   }   
    
    
