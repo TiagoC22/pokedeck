@@ -50,7 +50,7 @@ public class PokemonCard {
         return energyType;
     }
    public String toString() {
-       return namePokemon+hp+energyType;
+       return namePokemon+" "+hp+" "+energyType;
    }
    
     public String msgPokemon() {
@@ -59,7 +59,7 @@ public class PokemonCard {
 
 public static List<PokemonCard> jeu = new ArrayList<PokemonCard>(); //declaration of the array
 
-public static PokemonCard getCard() {
+public static PokemonCard getArrayPokemon() {
     for (int x=0; x<jeu.size(); x++) {
        return jeu.get(x);
     }
@@ -132,6 +132,7 @@ public static PokemonCard getCard() {
         jeu.add(new PokemonCard(namePokemon, hpPokemon, energyType)); //add pokemon object in the array
         PokemonCard pokemon = new PokemonCard (namePokemon, hpPokemon, energyType);
         jeu.add(pokemon);
+        System.out.println(pokemon.msgPokemon());
         
         
         Scanner console4 = new Scanner(System.in);

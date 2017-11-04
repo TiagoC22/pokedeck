@@ -5,6 +5,8 @@
  */
 package upmc.pcg.game;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import upmc.pcg.Menu;
 import upmc.pcg.addCard;
@@ -37,6 +39,24 @@ private String nameEnergy; //name of the card
     public EnergyType getEnergyType() {
         return energyType;
     }
+    
+        public String toString() {
+       return nameEnergy+" "+energyType;
+   }
+   
+    public String msgEnergy() {
+        return "You have create "+nameEnergy+" with the type : "+energyType;
+}
+    
+    public static List<EnergyCard> jeu = new ArrayList<EnergyCard>(); //declaration of the array
+
+    public static EnergyCard getArrayEnergy() {
+    for (int x=0; x<jeu.size(); x++) {
+       return jeu.get(x);
+    }
+        return null;
+     
+}
     
     public static void askEnergyCard() {
             Scanner console1 = new Scanner(System.in);
@@ -90,9 +110,11 @@ private String nameEnergy; //name of the card
                 energyType = EnergyType.Dragon;
             }
         //Create the card
+        jeu.add(new EnergyCard(nameEnergy, energyType));
         EnergyCard energy = new EnergyCard(nameEnergy,energyType);
-        System.out.println(energy.getCardEnergy());
-        
+        jeu.add(energy);
+        System.out.println(energy.msgEnergy());
+       
         Scanner console3 = new Scanner(System.in);
        
         System.out.println("Do you want to add a new card ?");

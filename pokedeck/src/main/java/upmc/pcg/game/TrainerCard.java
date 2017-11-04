@@ -5,6 +5,8 @@
  */
 package upmc.pcg.game;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import upmc.pcg.Menu;
 import upmc.pcg.addCard;
@@ -41,6 +43,24 @@ public class TrainerCard {
     public TrainerType getTrainerType() {
         return trainerType;
     }
+    public String toString() {
+       return nameTrainer+" "+descriptionTrainer+" "+trainerType;
+   }
+   
+    public String msgTrainer() {
+        return "You have create "+nameTrainer+" with the following description : "+descriptionTrainer+" and the type "+trainerType;
+}
+    
+    public static List<TrainerCard> jeu = new ArrayList<TrainerCard>(); //declaration of the array
+
+    public static TrainerCard getArrayTrainer() {
+    for (int x=0; x<jeu.size(); x++) {
+       return jeu.get(x);
+    }
+        return null;
+     
+}
+
     
     public static void askTrainerCard() {
         Scanner console1 = new Scanner(System.in);
@@ -75,8 +95,11 @@ public class TrainerCard {
                 trainerType = TrainerType.Supporter;
             }
            
+        jeu.add(new TrainerCard(nameTrainer, descriptionTrainer, trainerType));
         TrainerCard trainer = new TrainerCard(nameTrainer, descriptionTrainer, trainerType);
-        System.out.println(trainer.getCardTrainer());
+        jeu.add(trainer);
+        System.out.println(trainer.msgTrainer());
+        
         
         Scanner console4 = new Scanner(System.in);
        
