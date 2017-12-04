@@ -51,7 +51,7 @@ public void askAddCard() {
             menu.start();
         }
     }
-    public void ajouterCarte(Carte card) {
+    public void ajouterCarte(Card card) {
 		deck.add(card);
 	}
 	
