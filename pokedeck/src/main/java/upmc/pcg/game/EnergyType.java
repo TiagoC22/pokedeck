@@ -8,7 +8,7 @@ package upmc.pcg.game;
 
 /**
  *
- * @author lepor
+ * @author Tiago
  */
 
     

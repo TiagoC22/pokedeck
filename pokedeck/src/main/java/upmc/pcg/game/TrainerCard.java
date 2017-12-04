@@ -5,28 +5,25 @@
  */
 package upmc.pcg.game;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-import upmc.pcg.Menu;
-import upmc.pcg.addCard;
+import upmc.pcg.Card;
+
 
 /**
  *
- * @author lepor
+ * @author Tiago
  */
-public class TrainerCard {
-    public static TrainerType trainerType;//type of card
-    private String nameTrainer; //name of card
-    private String descriptionTrainer; //description of card
+public class TrainerCard extends Card {
+    protected TrainerType trainerType;//type of card
+    protected String nameTrainer; //name of card
+    protected String descriptionTrainer; //description of card
    
     //Constructor
-    public TrainerCard(String nameTrainer, String descriptionTrainer, TrainerType trainerType) {	
+    public TrainerCard(int id, String descriptionTrainer, String nameTrainer, TrainerType trainerType) {
+        super (id, nameTrainer, descriptionTrainer);
         this.trainerType = trainerType;
         this.nameTrainer = nameTrainer;
         this.descriptionTrainer = descriptionTrainer;
         }	
-    
     //Getters
     public String getCardTrainer(){
         return nameTrainer+descriptionTrainer+trainerType;
