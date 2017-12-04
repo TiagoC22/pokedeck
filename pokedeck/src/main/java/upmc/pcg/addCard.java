@@ -51,6 +51,10 @@ public void askAddCard() {
             menu.start();
         }
     }
+    public void ajouterCarte(Carte card) {
+		deck.add(card);
+	}
+	
 }
 
 }

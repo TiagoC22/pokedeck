@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package upmc.pcg;
+import java.util.ArrayList;
 import java.util.Scanner;
 import static upmc.pcg.game.EnergyCard.getArrayEnergy;
 import static upmc.pcg.game.PokemonCard.getArrayPokemon;
@@ -15,8 +16,12 @@ import static upmc.pcg.game.TrainerCard.getArrayTrainer;
  * @author lepor
  */
 public class Deck {
+    
+private ArrayList<Deck> deck;
 
-
+public Deck() {
+		deck = new ArrayList<Deck>();
+	}
 
     public static void displayCard(){
         

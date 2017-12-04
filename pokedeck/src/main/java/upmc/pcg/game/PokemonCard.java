@@ -57,7 +57,7 @@ public class PokemonCard {
         return "You have create "+namePokemon+" with "+hp+" life points,"+" and with the energy "+energyType;
     }
 
-public static List<PokemonCard> jeu = new ArrayList<PokemonCard>(); //declaration of the array
+public static List<PokemonCard> jeu = new ArrayList<PokemonCard>(); //Declaration of the array
 
 public static PokemonCard getArrayPokemon() {
     for (int x=0; x<jeu.size(); x++) {
