@@ -9,7 +9,7 @@ package upmc.pcg;
  *
  * @author Tiago
  */
-public class Card {
+public abstract class Card {
         protected String typecard;
 	protected String namecard;
 	protected String description;
@@ -30,10 +30,16 @@ public class Card {
 	public String getCardName() {
 		return namecard;
 	}
+        
+        public int getNumeroCarte() {
+		return id;
+	}
 	
         
-	public void CardDescription(String desc) {
+	public void cardDescription(String desc) {
 		this.description = desc;
 	}      
+       
+        public abstract String cardToString();
 }
 
