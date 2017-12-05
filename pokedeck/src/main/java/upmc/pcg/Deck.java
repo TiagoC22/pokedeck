@@ -1,17 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package upmc.pcg;
 import java.util.ArrayList;
 import java.util.Scanner;
 import upmc.pcg.Card;
 
-/**
- *
- * @author Tiago
- */
 public class Deck {
     
 protected ArrayList<Card> deck; //Tableau de carte
