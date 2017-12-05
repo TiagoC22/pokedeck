@@ -17,17 +17,17 @@ package upmc.pcg;
 
 
 
+import java.util.Scanner;
 import upmc.pcg.ui.GameUI;
 
 public class Pokedeck
 {
   public static void main(String[] args)
   {
-    Menu menu = new Menu(); //run menu
-    menu.start();
-    
-    GameUI game_ui = new GameUI();
-    game_ui.start();
+      Deck game = new Deck();
+      Scanner scanner =  new Scanner(System.in);
+      Menu menu = new Menu(game, scanner);
+      menu.start();
   }
   
 
