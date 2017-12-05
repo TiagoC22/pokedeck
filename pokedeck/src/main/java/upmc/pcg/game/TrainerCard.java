@@ -47,6 +47,11 @@ public class TrainerCard extends Card {
     public String msgTrainer() {
         return "You have create "+nameTrainer+" with the following description : "+descriptionTrainer+" and the type "+trainerType;
     }
+
+    @Override
+    public String cardToString() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 } 
     
 
