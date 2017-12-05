@@ -1,4 +1,4 @@
-package upmc.pcg;
+/*package upmc.pcg;
 import java.util.ArrayList;
 import java.util.Scanner;
 import upmc.pcg.Card;
@@ -76,4 +76,48 @@ protected ArrayList<Card> deck; //Tableau de carte
 
 
  
+}*/
+package Pokedeck.utilisateur;
+
+import java.util.ArrayList;
+
+import Pokedeck.pokemon.Carte;
+
+
+public class Deck {
+	
+	protected ArrayList<Carte> deck;
+	
+	public Deck() {
+		deck = new ArrayList<Carte>();
+	}
+	
+	public ArrayList<Carte> getDeck() {
+		return deck;
+	}
+	
+	public void ajouterCarte(Carte card) {
+		deck.add(card);
+	}
+	
+	public boolean enleverCarte(int num) {
+		for (Carte c : deck) {
+			if (c.getNumeroCarte() == num) return deck.remove(c);
+		}		
+		return false;
+	}
+	
+	public void ajouterDescriptionALaCarte(int num, String desc) {
+		for (Carte c : deck) {
+			if (c.getNumeroCarte() == num) c.mettreDescription(desc);
+		}
+	}
+	
+	public void parcoursDeck() {
+		for (Carte c : deck) {
+			System.out.println(c.carteToString());
+		}
+	}
+	
+	
 }
