@@ -31,7 +31,8 @@ public class PokemonCard extends Card {
     public int getHpPokemon() {
         return hp;
     }
-   
+ 
+    
     public EnergyType getEnergyTypePokemon() {
         return energyType;
     }
