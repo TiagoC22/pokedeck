@@ -23,7 +23,7 @@ public class PokemonCard extends Card {
   
     //Constructor
     public PokemonCard(int id, String namePokemon, int hp, EnergyType energyType) {
-        super(id, namePokemon, "");
+        super(id,"Pokemon", namePokemon);
         this.hp = hp;
         this.energyType = energyType;
     }
