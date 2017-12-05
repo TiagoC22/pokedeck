@@ -1,17 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package upmc.pcg.game;
 
 import upmc.pcg.Card;
 
-
-/**
- *
- * @author Tiago
- */
 public class TrainerCard extends Card {
     protected TrainerType trainerType;//type of card
     protected String nameTrainer; //name of card

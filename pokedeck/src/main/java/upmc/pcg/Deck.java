@@ -1,17 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package upmc.pcg;
+/*package upmc.pcg;
 import java.util.ArrayList;
 import java.util.Scanner;
 import upmc.pcg.Card;
 
-/**
- *
- * @author Tiago
- */
 public class Deck {
     
 protected ArrayList<Card> deck; //Tableau de carte
@@ -82,4 +73,78 @@ protected ArrayList<Card> deck; //Tableau de carte
 
 
  
+}*/
+package Pokedeck.utilisateur;
+
+import java.util.ArrayList;
+
+import Pokedeck.pokemon.Carte;
+
+
+public class Deck {
+	
+	protected ArrayList<Carte> deck;
+	
+	public Deck() {
+		deck = new ArrayList<Carte>();
+	}
+	
+	public ArrayList<Carte> getDeck() {
+		return deck;
+	}
+	
+	public void ajouterCarte(Carte card) {
+		deck.add(card);
+	}
+	
+	public boolean enleverCarte(int num) {
+		for (Carte c : deck) {
+			if (c.getNumeroCarte() == num) return deck.remove(c);
+		}		
+		return false;
+	}
+	
+	public void ajouterDescriptionALaCarte(int num, String desc) {
+		for (Carte c : deck) {
+			if (c.getNumeroCarte() == num) c.mettreDescription(desc);
+		}
+	}
+	
+	public int tailleDeck() {
+		return deck.size();
+	}
+	
+	public void parcoursDeck() {
+		for (Carte c : deck) {
+			System.out.println(c.carteToString());
+		}
+	}
+	
+	public boolean existeDansDeck(int num) {
+		for (Carte c : deck) {
+			if (c.getNumeroCarte() == num) return true;
+		}
+		return false;
+	}
+	
+	public Carte retourneCarteDansDeck(int num) {
+		for (Carte c : deck) {
+			if (c.getNumeroCarte() == num) return c;
+		}
+		return null;
+	}
+	
+	public void afficheCartesParType(String type) {
+		for (Carte c : deck) {
+			if (c.getCarteType().equals(type)) System.out.println(c.carteToString());
+		}
+	}
+	
+	public void afficheCartesParNom(String nom) {
+		String nomCarte;
+		for (Carte c : deck) {
+			nomCarte = c.getCarteNom();
+			if (nomCarte.toLowerCase().equals(nom.toLowerCase())) System.out.println(c.carteToString());
+		}
+	}
 }
