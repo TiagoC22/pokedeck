@@ -6,47 +6,80 @@
 package upmc.pcg;
 import java.util.ArrayList;
 import java.util.Scanner;
-import static upmc.pcg.game.EnergyCard.getArrayEnergy;
-import static upmc.pcg.game.PokemonCard.getArrayPokemon;
-import static upmc.pcg.game.TrainerCard.getArrayTrainer;
-
+import upmc.pcg.Card;
 
 /**
  *
- * @author lepor
+ * @author Tiago
  */
 public class Deck {
     
-private ArrayList<Deck> deck;
+protected ArrayList<Card> deck; //Tableau de carte
 
-public Deck() {
-		deck = new ArrayList<Deck>();
+    public Deck() {
+	deck = new ArrayList<Card>(); //Array des cartes
 	}
 
-    public static void displayCard(){
+
+       
         
-        Scanner console1 = new Scanner(System.in);
-        System.out.println("Which card deck do you want to watch : ");
-        System.out.println("[1] Pokemon deck");
-        System.out.println("[2] Trainer deck");
-        System.out.println("[3] Energy deck");
-        System.out.flush();
-        int choicedeck = console1.nextInt();
-        
-        switch(choicedeck) {
-            case 1 : if (choicedeck == 1) {
-                System.out.println(getArrayPokemon().toString());
-            }
-                
-            case 2 : if (choicedeck == 2 ) {
-                System.out.println(getArrayTrainer().toString());
-            }
-                
-            case 3 : if (choicedeck == 3 ) {
-                System.out.println(getArrayEnergy().toString());
-            }
-        }
-        
+        public ArrayList<Card> getDeck() {
+		return deck;
+	}
+	
+	public void ajouterCarte(Card card) {
+		deck.add(card);
+	}
+	
+	public boolean enleverCarte(int num) {
+		for (Card c : deck) {
+			if (c.getNumeroCarte() == num) return deck.remove(c);
+		}		
+		return false;
+	}
+	
+	public void ajouterDescriptionALaCarte(int num, String desc) {
+		for (Card c : deck) {
+			if (c.getNumeroCarte() == num) c.cardDescription(desc);
+		}
+	}
+	
+	public int tailleDeck() {
+		return deck.size();
+	}
+	
+	public void parcoursDeck() {
+		for (Card c : deck) {
+			System.out.println(c.cardToString());
+		}
+	}
+	
+	public boolean existeDansDeck(int num) {
+		for (Card c : deck) {
+			if (c.getNumeroCarte() == num) return true;
+		}
+		return false;
+	}
+	
+	public Card retourneCarteDansDeck(int num) {
+		for (Card c : deck) {
+			if (c.getNumeroCarte() == num) return c;
+		}
+		return null;
+	}
+	
+	public void afficheCartesParType(String type) {
+		for (Card c : deck) {
+			if (c.getCardType().equals(type)) System.out.println(c.cardToString());
+		}
+	}
+	
+	public void afficheCartesParNom(String nom) {
+		String nomCarte;
+		for (Card c : deck) {
+			nomCarte = c.getCardName();
+			if (nomCarte.toLowerCase().equals(nom.toLowerCase())) System.out.println(c.cardToString());
+                }
     }
     
 
