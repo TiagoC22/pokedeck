@@ -6,6 +6,8 @@
 package upmc.pcg.ui;
 
 import java.util.Scanner;
+import upmc.pcg.Card;
+import upmc.pcg.Deck;
 
 
 /**
@@ -18,16 +20,22 @@ public class GameConsole {
 
 
 
-
-
-
-
 	private Scanner scanner;
 	private String choice;
 	private int id;
 
-	public GameConsole(Scanner sc) {
-		this.scanner = sc;
+	public GameConsole(Scanner scan) {
+		this.scanner = scan;
+	}
+
+	// --------------------------------------------------
+
+	public void parcoursDeck(Deck deck) {
+		if (deck.sizeDeck() == 0) {
+			System.out.println("Le paquet est vide");
+		} else {
+			deck.parcoursDeck();
+		}
 	}
 
 	
