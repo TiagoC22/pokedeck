@@ -113,11 +113,41 @@ public class Deck {
 		}
 	}
 	
+	public int tailleDeck() {
+		return deck.size();
+	}
+	
 	public void parcoursDeck() {
 		for (Carte c : deck) {
 			System.out.println(c.carteToString());
 		}
 	}
 	
+	public boolean existeDansDeck(int num) {
+		for (Carte c : deck) {
+			if (c.getNumeroCarte() == num) return true;
+		}
+		return false;
+	}
 	
+	public Carte retourneCarteDansDeck(int num) {
+		for (Carte c : deck) {
+			if (c.getNumeroCarte() == num) return c;
+		}
+		return null;
+	}
+	
+	public void afficheCartesParType(String type) {
+		for (Carte c : deck) {
+			if (c.getCarteType().equals(type)) System.out.println(c.carteToString());
+		}
+	}
+	
+	public void afficheCartesParNom(String nom) {
+		String nomCarte;
+		for (Carte c : deck) {
+			nomCarte = c.getCarteNom();
+			if (nomCarte.toLowerCase().equals(nom.toLowerCase())) System.out.println(c.carteToString());
+		}
+	}
 }
