@@ -19,9 +19,6 @@ protected ArrayList<Card> deck; //Tableau de carte
     public Deck() {
 	deck = new ArrayList<Card>(); //Array des cartes
 	}
-
-
-       
         
         public ArrayList<Card> getDeck() {
 		return deck;

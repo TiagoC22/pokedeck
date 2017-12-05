@@ -1,4 +1,4 @@
-package Pokedeck.utilisateur;
+package upmc.pcg;
 
 import java.util.Scanner;
 
@@ -15,7 +15,7 @@ public class Menu {
 		paquetJoueur = d;
 	}
 	
-	public void depart() {
+	public void start() {
 		System.out.println("BONJOUR UTILISATEUR");
 		System.out.println("Que voulez-vous faire ?");
 		System.out.println("------------------------");
