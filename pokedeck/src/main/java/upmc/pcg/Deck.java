@@ -1,150 +1,79 @@
-/*package upmc.pcg;
+package upmc.pcg;
+
 import java.util.ArrayList;
-import java.util.Scanner;
-import upmc.pcg.Card;
+
+
 
 public class Deck {
-    
-protected ArrayList<Card> deck; //Tableau de carte
-
-    public Deck() {
-	deck = new ArrayList<Card>(); //Array des cartes
+	
+	protected ArrayList<Card> game;
+	
+	public Deck() {
+		game = new ArrayList<Card>();
+	}
+	
+	public ArrayList<Card> getDeck() {
+		return game;
+	}
+	
+	public void addCard(Card c) {
+		game.add(c);
 	}
         
-        public ArrayList<Card> getDeck() {
-		return deck;
+        public int sizeDeck() {
+		return game.size();
 	}
 	
-	public void ajouterCarte(Card card) {
-		deck.add(card);
-	}
-	
-	public boolean enleverCarte(int num) {
-		for (Card c : deck) {
-			if (c.getNumeroCarte() == num) return deck.remove(c);
-		}		
-		return false;
-	}
-	
-	public void ajouterDescriptionALaCarte(int num, String desc) {
-		for (Card c : deck) {
-			if (c.getNumeroCarte() == num) c.cardDescription(desc);
+        public void addDescriptionCard(int id, String description) {
+		for (Card c : game) {
+			if (c.getIdCard() == id) c.cardDescription(description);
 		}
 	}
-	
-	public int tailleDeck() {
-		return deck.size();
+        
+	public boolean delCard(int id) {
+		for (Card c : game) {
+			if (c.getIdCard() == id) 
+                            return game.remove(c);
+		}		
+                    return false;
 	}
 	
-	public void parcoursDeck() {
-		for (Card c : deck) {
+	public void seeDeck() { 
+		for (Card c : game) {
 			System.out.println(c.cardToString());
 		}
 	}
 	
-	public boolean existeDansDeck(int num) {
-		for (Card c : deck) {
-			if (c.getNumeroCarte() == num) return true;
-		}
-		return false;
-	}
-	
-	public Card retourneCarteDansDeck(int num) {
-		for (Card c : deck) {
-			if (c.getNumeroCarte() == num) return c;
-		}
-		return null;
-	}
-	
-	public void afficheCartesParType(String type) {
-		for (Card c : deck) {
-			if (c.getCardType().equals(type)) System.out.println(c.cardToString());
+        public void displayCardType(String type) {
+		for (Card c : game) {
+			if (c.getCardType().equals(type)) 
+                            System.out.println(c.cardToString());
 		}
 	}
 	
-	public void afficheCartesParNom(String nom) {
-		String nomCarte;
-		for (Card c : deck) {
-			nomCarte = c.getCardName();
-			if (nomCarte.toLowerCase().equals(nom.toLowerCase())) System.out.println(c.cardToString());
-                }
-    }
-    
-
-
- 
-}*/
-package Pokedeck.utilisateur;
-
-import java.util.ArrayList;
-
-import Pokedeck.pokemon.Carte;
-
-
-public class Deck {
-	
-	protected ArrayList<Carte> deck;
-	
-	public Deck() {
-		deck = new ArrayList<Carte>();
-	}
-	
-	public ArrayList<Carte> getDeck() {
-		return deck;
-	}
-	
-	public void ajouterCarte(Carte card) {
-		deck.add(card);
-	}
-	
-	public boolean enleverCarte(int num) {
-		for (Carte c : deck) {
-			if (c.getNumeroCarte() == num) return deck.remove(c);
-		}		
-		return false;
-	}
-	
-	public void ajouterDescriptionALaCarte(int num, String desc) {
-		for (Carte c : deck) {
-			if (c.getNumeroCarte() == num) c.mettreDescription(desc);
+	public void displayCardName(String name) {
+		String nameCard;
+		for (Card c : game) {
+			nameCard = c.getCardName();
+			if (nameCard.toLowerCase().equals(name.toLowerCase())) 
+                            System.out.println(c.cardToString());
 		}
 	}
-	
-	public int tailleDeck() {
-		return deck.size();
-	}
-	
-	public void parcoursDeck() {
-		for (Carte c : deck) {
-			System.out.println(c.carteToString());
+        
+	public boolean verifyDeck(int id) {
+		for (Card c : game) {
+			if (c.getIdCard() == id) 
+                            return true;
 		}
+                    return false;
 	}
 	
-	public boolean existeDansDeck(int num) {
-		for (Carte c : deck) {
-			if (c.getNumeroCarte() == num) return true;
+	public Card cardToDeck(int id) {
+		for (Card c : game) {
+			if (c.getIdCard() == id) 
+                            return c;
 		}
-		return false;
+                    return null;
 	}
 	
-	public Carte retourneCarteDansDeck(int num) {
-		for (Carte c : deck) {
-			if (c.getNumeroCarte() == num) return c;
-		}
-		return null;
-	}
-	
-	public void afficheCartesParType(String type) {
-		for (Carte c : deck) {
-			if (c.getCarteType().equals(type)) System.out.println(c.carteToString());
-		}
-	}
-	
-	public void afficheCartesParNom(String nom) {
-		String nomCarte;
-		for (Carte c : deck) {
-			nomCarte = c.getCarteNom();
-			if (nomCarte.toLowerCase().equals(nom.toLowerCase())) System.out.println(c.carteToString());
-		}
-	}
 }
