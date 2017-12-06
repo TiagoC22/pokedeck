@@ -1,45 +1,43 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package upmc.pcg.ui;
 
+
+
 import java.util.Scanner;
-import upmc.pcg.Card;
+
 import upmc.pcg.Deck;
 
-
-/**
- *
- * @author Tiago
- */
 
 
 public class GameConsole {
 
-
-
-	private Scanner scanner;
+	Scanner scanner = new Scanner(System.in);
 	private String choice;
-	private int id;
+	private int value;
 
-	public GameConsole(Scanner scan) {
-		this.scanner = scan;
+	public GameConsole(Scanner sc) {
+		this.scanner = sc;
 	}
 
-	// --------------------------------------------------
+	
 
-	public void parcoursDeck(Deck deck) {
-		if (deck.sizeDeck() == 0) {
+	public void allDeck(Deck game) {
+		if (game.sizeDeck() == 0) {
 			System.out.println("Le paquet est vide");
 		} else {
-			deck.parcoursDeck();
+			game.seeDeck();
 		}
 	}
 
 	
 
+	public int choiceTypeOfCard() {
+		System.out.println("Vous voulez ajouter une carte... ?");
+		System.out.println("1 - POKEMON \t2 - DRESSEUR\t3 - ENERGIE");
+		choice = scanner.nextLine();
+		int value = Integer.parseInt(choice);
+		return value;
+	}
+
+	
+
 }
-
-
