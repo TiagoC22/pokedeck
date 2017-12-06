@@ -1,87 +1,79 @@
 package upmc.pcg;
-
+import upmc.pcg.ui.GameConsole;
 import java.util.Scanner;
 
 public class Menu {
 	
-	private Scanner sc;
-	private SousMenu sousMenu;
-	private String choix = "1";
-	private Deck paquetJoueur;
+	Scanner sc = new Scanner(System.in);
+	public GameConsole GameConsole;
+	private Deck game;
+        
 		
 	public Menu(Deck d, Scanner scanner) {
 		this.sc = scanner;
-		sousMenu = new SousMenu(scanner);
-		paquetJoueur = d;
+		GameConsole = new GameConsole(scanner);
+		game = d;
 	}
 	
+        String choice = "1";
 	public void start() {
-		System.out.println("BONJOUR UTILISATEUR");
-		System.out.println("Que voulez-vous faire ?");
-		System.out.println("------------------------");
-		
-		while (Integer.parseInt(choix) != 0) {
-			menu();
-			choix_utilisateur();
+            
+		System.out.println("Veuillez faire un choix :");
+		while (Integer.parseInt(choice) != 0) {
+			askUser_1(); //Call method askUser_1	
 		}
 	}
 	
-	public void menu() {
-		System.out.println("--------- MENU ---------");
-		System.out.println("0 - QUITTER");
-		System.out.println("1 - VOIR POKEDECK");
-		System.out.println("2 - AJOUTER CARTE (POKEMON, ENERGIE, DRESSEUR)");
-		System.out.println("3 - SUPPRIMER CARTE");
-		System.out.println("4 - MODIFIER CARTE (AJOUTER DESCRIPTION)");
-		System.out.println("5 - RECHERCHER (DIFFERENTES OPTIONS)");
+	public void askUser_1() {
+            
+		System.out.println("1 / Add a card");
+		System.out.println("2 / Delete a card");
+		System.out.println("3 / Update a card");
+		System.out.println("4 / See the deck");
+		System.out.println("5 / Search a card");
+		System.out.println("6 / Leave");
+                        
+                choice = sc.nextLine();
+		if (choice.equals("")) {
+                    choice = "0";
+                    System.out.println("Choose an existing choice");
+		}
+		
+		int value = Integer.parseInt(choice);
+		
+		switch(value) {
+                        default :
+                            System.out.println("This is not a good choice !");
+			break;
+                        case 1 : //Add a card
+				GameConsole.addCardDeck(game);
+				break;
+                                
+                        case 2 : //Delete a card
+				GameConsole.delCard(game);
+				break;
+                        
+                        case 3 : //Update a card
+				GameConsole.updateCard(game);
+				break;
+                            
+                        case 4 : //See deck
+				GameConsole.allDeck(game);
+				break;
+			
+                        case 5 : //Search a card
+				GameConsole.searchCard(game);
+				break;
+			
+                        case 6 :
+				System.exit(0);
+				break;
+			
+			
+			
+					
+		}
 	}
 	
-	public void choix_utilisateur() {
-		
-		choix = sc.nextLine();
-		if (choix.equals("")) {
-			choix = "0";
-			System.out.println("Choix vide --- QUITTER");
-		}
-		System.out.println("------------------------");
-		
-		int n = Integer.parseInt(choix);
-		
-		switch(n) {
-			case 0 :
-				// QUITTER
-				System.out.println("Vous venez de quitter.");
-				System.out.println("------------------------");
-				break;
-			case 1 :
-				// VOIR POKEDECK
-				sousMenu.parcoursDeck(paquetJoueur);
-				System.out.println("------------------------");
-				break;
-			case 2 :
-				// AJOUTER CARTE
-				sousMenu.ajoutCarteDansDeck(paquetJoueur);
-				System.out.println("------------------------");
-				break;
-			case 3 :
-				// SUPPRIMER CARTE
-				sousMenu.supprimerCarteDansDeck(paquetJoueur);
-				System.out.println("------------------------");
-				break;
-			case 4 :
-				// MODIFIER CARTE
-				sousMenu.modifierCarteDansDeck(paquetJoueur);
-				System.out.println("------------------------");
-				break;
-			case 5 :
-				// RECHERCHER CARTE
-				sousMenu.rechercherCarte(paquetJoueur);
-				System.out.println("------------------------");
-				break;
-			default :
-				System.out.println("Ce n'est pas un choix valide !");
-				break;
-		}
-
-	}
+	
 }
