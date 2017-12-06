@@ -1,35 +1,34 @@
-
 package upmc.pcg;
 
 public abstract class Card {
-        protected String typecard;
-	protected String namecard;
+        protected String typeCard;
+	protected String nameCard;
 	protected String description;
         protected int id;
         
         //Constructor
-        public Card(int id, String typecard, String namecard) {
+        public Card(int id, String nameCard, String typeCard) {
         this.id = id;
-	this.typecard = typecard;
-	this.namecard = namecard;
+	this.typeCard = typeCard;
+	this.nameCard = nameCard;
 	}
 
 	//Getters
 	public String getCardType() {
-		return typecard;
+		return typeCard;
 	}
 	
 	public String getCardName() {
-		return namecard;
+		return nameCard;
 	}
         
-        public int getNumeroCarte() {
+        public int getIdCard() {
 		return id;
 	}
 	
         
-	public void cardDescription(String desc) {
-		this.description = desc;
+	public void cardDescription(String description) {
+		this.description = description;
 	}      
        
         public abstract String cardToString();
