@@ -32,7 +32,10 @@ public class GameConsole {
 
 	public int choiceTypeOfCard() {
 		System.out.println("Vous voulez ajouter une carte... ?");
-		System.out.println("1 - POKEMON \t2 - DRESSEUR\t3 - ENERGIE");
+		System.out.println("1 / Pokemon");
+                System.out.println("2 / Dresseur");
+                System.out.println("3 / Energie");
+                
 		choice = scanner.nextLine();
 		int value = Integer.parseInt(choice);
 		return value;
