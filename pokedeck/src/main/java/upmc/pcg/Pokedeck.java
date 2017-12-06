@@ -3,7 +3,7 @@ package upmc.pcg;
 
 
 import java.util.Scanner;
-import upmc.pcg.ui.GameUI;
+
 
 public class Pokedeck
 {
