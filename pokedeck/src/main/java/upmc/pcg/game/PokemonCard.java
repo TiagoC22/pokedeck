@@ -1,24 +1,22 @@
-
 package upmc.pcg.game;
 
 import upmc.pcg.Card;
 
 
+
 public class PokemonCard extends Card {
 
-
+    protected EnergyType energyType;
+    protected int hp;
     private String namePokemon;
-    public static EnergyType energyType;
-    private int hp;
-    protected int id;
-  
-    //Constructor
-    public PokemonCard(int id, String namePokemon, int hp, EnergyType energyType) {
-        super(id,"Pokemon", namePokemon);
+
+    public PokemonCard(int id, EnergyType typePokemon, String namePokemon, int hp) {
+        super(id, "Pokemon", namePokemon); //Call constructor of class Card
+        this.namePokemon = namePokemon;
+        this.energyType = typePokemon;
         this.hp = hp;
-        this.energyType = energyType;
     }
-   
+        
     //Accessors
     public String getCardPokemon(){
         return namePokemon+hp+energyType;
@@ -32,7 +30,6 @@ public class PokemonCard extends Card {
         return hp;
     }
  
-    
     public EnergyType getEnergyTypePokemon() {
         return energyType;
     }
@@ -40,21 +37,13 @@ public class PokemonCard extends Card {
     public String toString() {
        return namePokemon+" "+hp+" "+energyType;
     }
-   
-    public String msgPokemon() {
-        return "You have create "+namePokemon+" with "+hp+" life points,"+" and with the energy "+energyType;
-    }
 
     @Override
     public String cardToString() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String card = "[Id] : "+this.id+" [Name] : "+this.namePokemon+ " [Type] : " + this.energyType+" [Hp] : "+this.hp;
+
+        if (this.description != null)
+            card += "\n"+this.description;
+	return  card;
     }
-
-
-
-
 }
-
-  
- 
-

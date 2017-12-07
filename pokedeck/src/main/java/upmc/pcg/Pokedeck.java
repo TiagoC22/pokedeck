@@ -7,6 +7,10 @@
 package upmc.pcg;
 import java.util.Scanner;
 
+/**
+ *
+ * @author Tiago
+ */
 
 public class Pokedeck
 {

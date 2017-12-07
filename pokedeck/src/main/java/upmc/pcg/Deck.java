@@ -23,8 +23,8 @@ public class Deck {
         return game;
         }
 
-    public void addCard(Card c) {
-        game.add(c);
+    public void addCard(Card card) {
+        game.add(card);
     }
         
     public int sizeDeck() {
@@ -32,52 +32,52 @@ public class Deck {
     }
 
     public void addDescriptionCard(int id, String description) {
-        for (Card c : game) {
-            if (c.getIdCard() == id) c.cardDescription(description);
+        for (Card card : game) {
+            if (card.getIdCard() == id) card.cardDescription(description);
         }
     }
 
     public boolean delCard(int id) {
-        for (Card c : game) {
-            if (c.getIdCard() == id) 
-            return game.remove(c);
+        for (Card card : game) {
+            if (card.getIdCard() == id) 
+            return game.remove(card);
         }		
         return false;
     }
 
     public void seeDeck() { 
-        for (Card c : game) {
-            System.out.println(c.cardToString());
+        for (Card card : game) {
+            System.out.println(card.cardToString());
 	}
     }
 
     public void displayCardType(String type) {
-	for (Card c : game) {
-            if (c.getCardType().equals(type)) 
-                System.out.println(c.cardToString());
+	for (Card card : game) {
+            if (card.getCardType().equals(type)) 
+                System.out.println(card.cardToString());
 	}
     }
 
     public void displayCardName(String name) {
-    for (Card c : game) {
-	String nameCard = c.getCardName();
+    for (Card card : game) {
+	String nameCard = card.getCardName();
             if (nameCard.toLowerCase().equals(name.toLowerCase())) 
-                System.out.println(c.cardToString());
+                System.out.println(card.cardToString());
 	}
     }
 
     public boolean verifyDeck(int id) {
-	for (Card c : game) {
-            if (c.getIdCard() == id) 
+	for (Card card : game) {
+            if (card.getIdCard() == id) 
                 return true;
 	}
         return false;
     }
 
     public Card cardToDeck(int id) {
-	for (Card c : game) {
-            if (c.getIdCard() == id) 
-                return c;
+	for (Card card : game) {
+            if (card.getIdCard() == id) 
+                return card;
 	}
         return null;
     }	
