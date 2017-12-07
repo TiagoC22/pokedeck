@@ -1,7 +1,16 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
 package upmc.pcg.game;
-
 import upmc.pcg.Card;
+
+/**
+ *
+ * @author Tiago
+ */
 
 public class TrainerCard extends Card {
     protected TrainerType trainerType;//type of card
@@ -9,12 +18,13 @@ public class TrainerCard extends Card {
     protected String descriptionTrainer; //description of card
    
     //Constructor
-    public TrainerCard(int id, String descriptionTrainer, String nameTrainer, TrainerType trainerType) {
+    public TrainerCard(int id, String nameTrainer, String descriptionTrainer, TrainerType trainerType) {
         super (id, nameTrainer, descriptionTrainer);
         this.trainerType = trainerType;
         this.nameTrainer = nameTrainer;
         this.descriptionTrainer = descriptionTrainer;
         }	
+    
     //Getters
     public String getCardTrainer(){
         return nameTrainer+descriptionTrainer+trainerType;
@@ -41,7 +51,12 @@ public class TrainerCard extends Card {
 
     @Override
     public String cardToString() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String card = "[Id] : "+this.id+" [Name] : "+this.nameTrainer +" [Description] : "+this.descriptionTrainer+" [Type] : " + this.trainerType;
+
+        if (this.description != null)
+            card += "\n"+this.description;
+		
+	return  card;
     }
 } 
     
